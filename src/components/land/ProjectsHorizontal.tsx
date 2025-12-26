@@ -1,35 +1,32 @@
-'use client'
+'use client';
 
-import { useLayoutEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
-import type { LandingProject } from '@/types/landing'
+import { useLayoutEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import type { LandingProject } from '@/types/landing';
 
 type Props = {
-  projecting: LandingProject[]
-}
+  projecting: LandingProject[];
+};
 
 export default function HorizontalProjects({ projecting }: Props) {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-
-  
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
-    if (!containerRef.current || !projecting.length) return
+    if (!containerRef.current || !projecting.length) return;
 
-    let ctx: gsap.Context | undefined
+    let ctx: gsap.Context | undefined;
+    (async () => {
+      const { default: gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
-    ;(async () => {
-      const { default: gsap } = await import('gsap')
-      const { ScrollTrigger } = await import('gsap/ScrollTrigger')
+      gsap.registerPlugin(ScrollTrigger);
 
-      gsap.registerPlugin(ScrollTrigger)
-
-      const container = containerRef.current!
+      const container = containerRef.current!;
 
       ctx = gsap.context(() => {
-        const panels = gsap.utils.toArray<HTMLElement>('.panel')
+        const panels = gsap.utils.toArray<HTMLElement>('.panel');
 
-        const mm = gsap.matchMedia()
+        const mm = gsap.matchMedia();
 
         mm.add(
           {
@@ -37,7 +34,7 @@ export default function HorizontalProjects({ projecting }: Props) {
             mobile: '(max-width: 767px)',
           },
           ({ conditions }) => {
-            if (!conditions?.desktop) return
+            if (!conditions?.desktop) return;
 
             const horiz = gsap.to(panels, {
               xPercent: -100 * (panels.length - 1),
@@ -54,11 +51,11 @@ export default function HorizontalProjects({ projecting }: Props) {
                   ease: 'power2.out',
                 },
               },
-            })
+            });
 
             panels.forEach((panel) => {
-              const content = panel.querySelector('.panel-content')
-              if (!content) return
+              const content = panel.querySelector('.panel-content');
+              if (!content) return;
 
               gsap.fromTo(
                 content,
@@ -74,22 +71,19 @@ export default function HorizontalProjects({ projecting }: Props) {
                     end: 'left 30%',
                   },
                 }
-              )
-            })
+              );
+            });
           }
-        )
-      }, container)
-    })()
+        );
+      }, container);
+    })();
 
-    return () => ctx?.revert()
-  }, [projecting.length])
+    return () => ctx?.revert();
+  }, [projecting.length]);
 
   return (
     <div className="bg-white">
-      <div
-        ref={containerRef}
-        className="flex flex-col md:h-screen md:flex-row md:overflow-hidden"
-      >
+      <div ref={containerRef} className="flex flex-col md:h-screen md:flex-row md:overflow-hidden">
         {projecting.map((project) => (
           <section
             key={project.slug}
@@ -97,18 +91,14 @@ export default function HorizontalProjects({ projecting }: Props) {
           >
             <div className="panel-content mx-auto max-w-3xl text-center">
               {project.eyebrow && (
-                <p className="mb-3 text-sm uppercase tracking-wide text-black/40">
+                <p className="mb-3 text-sm tracking-wide text-black/40 uppercase">
                   {project.eyebrow}
                 </p>
               )}
 
-              <h2 className="text-4xl font-semibold md:text-6xl">
-                {project.name}
-              </h2>
+              <h2 className="text-4xl font-semibold md:text-6xl">{project.name}</h2>
 
-              <p className="mx-auto mt-4 max-w-xl text-secondary-theme/70">
-                {project.description}
-              </p>
+              <p className="text-secondary-theme/70 mx-auto mt-4 max-w-xl">{project.description}</p>
 
               <motion.a
                 href={`/projects/${project.slug}`}
@@ -125,5 +115,5 @@ export default function HorizontalProjects({ projecting }: Props) {
         ))}
       </div>
     </div>
-  )
+  );
 }

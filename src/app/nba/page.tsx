@@ -22,10 +22,9 @@ export default function page() {
       {/* New additions */}
       <SplitScroll />
       <Experience />
-            <section className="relative min-h-[200vh]">
+      <section className="relative min-h-[200vh]">
         <HorizontalMain />
       </section>
-
 
       <Contact />
       {/* <About />
