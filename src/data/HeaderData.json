@@ -1,0 +1,6 @@
+[
+  { "href": "/projects", "label": "Projects", "icon": "MoveUpRight" },
+  { "href": "https://www.linkedin.com/in/nidhi-baindur/", "label": "LinkedIn", "icon": "Linkedin" },
+  { "href": "https://github.com/nidhibaindur3", "label": "Github", "icon": "Github" },
+  { "href": "/#contact", "label": "Connect", "icon": "CircleUserRound" }
+]
