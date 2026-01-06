@@ -17,12 +17,12 @@ export default function page() {
       <Header />
       <Hero />
       <About />
-      <Skills />
       <Projects />
-      <Experience />
+      <Skills />
+      {/* <Experience /> */}
 
-      <SplitScroll />
-      <Achievements />
+      {/* <SplitScroll /> */}
+      {/* <Achievements /> */}
       <Contact />
 
       {/* <StickyCards/> */}

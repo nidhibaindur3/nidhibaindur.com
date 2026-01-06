@@ -1,4 +1,23 @@
-const pillars = [
+export const aboutContent = {
+  badge: 'About',
+
+  headline:
+    'Designer, facilitator, and systems nerd focused on creating calm, resilient products.',
+
+  paragraphs: [
+    'I partner closely with product and engineering leads to turn ambiguous ideas into aligned roadmaps. My work blends research, strategy, and meticulous craft so we can deliver experiences that feel effortless and inclusive.',
+
+    "Outside of the design desk you'll find me mentoring early career designers, illustrating wild interface concepts, and writing about building mindful digital experiences.",
+  ],
+};
+
+export const quickFacts = [
+  { label: 'Based in', value: 'DFW' },
+  { label: 'Working style', value: 'Remote-first, async-friendly' },
+  { label: 'Collaborations', value: 'Fintech, Health, SaaS' },
+];
+
+export const pillars = [
   {
     title: 'Systems thinking',
     description:
@@ -15,11 +34,3 @@ const pillars = [
       'Accessibility, localization, and inclusive storytelling are built into my process from day zero, not retrofitted later.',
   },
 ];
-
-const quickFacts = [
-  { label: 'Based in', value: 'Dallas-ForthWorth Metroplex' },
-  { label: 'Working style', value: 'Remote-first, async-friendly' },
-  { label: 'Collaborations', value: 'Fintech, Health, SaaS' },
-];
-
-export { pillars, quickFacts };
