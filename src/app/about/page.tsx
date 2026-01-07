@@ -5,7 +5,7 @@ import React, { useRef, useState} from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence, type Variants } from 'framer-motion';
 import Header from '@/components/landing/Header'; // Adjust the import path as needed
-import { toolkitIcons } from '../../data/aboutData';
+import { aboutData } from '../../data/aboutData';
 import ResourceAccordion from '../../components/about/ResourceAccordion';
 import CardStack from '../../components/about/CardStack';
 import FAQAccordion from '../../components/about/FAQAccordion';
@@ -76,82 +76,105 @@ export default function AboutPage() {
               </div>
             </section>
 
-            {/* --- SECTION 2: BENTO GRID (1:1 MATCH) --- */}
-          <section className="h-screen w-screen shrink-0 flex items-center justify-center px-12 lg:px-20">
-            <div className="flex w-full max-w-[1440px] items-center gap-16">
-              
-              <div className="flex-shrink-0 w-[350px]">
-                <div className="w-5 h-5 bg-[#3333FF] rounded-full mb-8 shadow-sm" />
-                <h1 className="text-[85px] font-[1000] leading-[0.8] tracking-tighter uppercase">
-                  Let’s know<br />more about<br />me
-                </h1>
-              </div>
+          {/* --- SECTION 2: BENTO GRID (1:1 MATCH) --- */}
+<section className="h-screen w-screen shrink-0 flex items-center justify-center px-12 lg:px-20">
+  <div className="flex w-full max-w-[1440px] items-center gap-16">
+    
+    {/* Left Header Column */}
+    <div className="flex-shrink-0 w-[350px]">
+      <div className={`w-5 h-5 ${aboutData.header.dotColor} rounded-full mb-8 shadow-sm`} />
+      <h1 className="text-[85px] font-[1000] leading-[0.8] tracking-tighter uppercase whitespace-pre-line">
+        {aboutData.header.title}
+      </h1>
+    </div>
 
-              <motion.div 
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                className="grid grid-cols-12 gap-5 h-[620px] w-full items-stretch"
-              >
-                {/* Toolkit Box */}
-                <motion.div variants={itemVariants} className="col-span-4 border-[1.5px] border-black rounded-[3rem] p-10 flex flex-col justify-between bg-white overflow-hidden group">
-                  <div>
-                    <h3 className="text-4xl font-[1000] tracking-tighter mb-4">Toolkit</h3>
-                    <p className="text-[17px] font-bold text-neutral-800 leading-snug">This is my collection of tools that help me transform ideas into amazing designs.</p>
-                  </div>
-                  <div className="relative w-full overflow-hidden -mx-10 pb-4">
-                    <motion.div 
-                      className="flex gap-4 px-10"
-                      animate={{ x: [0, -320] }}
-                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    >
-                      {[...toolkitIcons, ...toolkitIcons].map((item, i) => (
-                        <div key={i} className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-sm flex-shrink-0 ${item.color} group-hover:scale-105 transition-transform`}>
-                          {item.icon}
-                        </div>
-                      ))}
-                    </motion.div>
-                  </div>
-                </motion.div>
-
-                {/* Skills Box (Stickers) */}
-                <motion.div variants={itemVariants} className="col-span-4 border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col">
-                  <h3 className="text-4xl font-[1000] tracking-tighter mb-4">Skills</h3>
-                  <p className="text-[17px] font-bold text-neutral-800 leading-snug mb-8">Methods and strengths I bring to every project.</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['Branding', 'UI/UX', 'Figma', 'Next.js', 'React', 'Tailwind', 'Motion', 'Python'].map((skill, idx) => (
-                      <span 
-                        key={skill}
-                        className="px-4 py-1.5 border-[1.5px] border-black rounded-full text-[11px] font-[1000] uppercase bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)]"
-                        style={{ transform: `rotate(${idx % 2 === 0 ? -3 : 3}deg)` }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-
-                {/* Map & Portfolio Stack */}
-                <div className="col-span-4 grid grid-rows-2 gap-5">
-                  <motion.div variants={itemVariants} className="border-[1.5px] border-black rounded-[3rem] overflow-hidden relative bg-[#E6E2D3]">
-                    <div className="absolute inset-0 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px] opacity-20" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <div className="w-8 h-8 bg-red-600 rounded-full border-[3px] border-white shadow-xl animate-bounce" />
-                      <span className="mt-2 bg-white px-2 py-0.5 rounded border border-black text-[10px] font-black uppercase">London, UK</span>
-                    </div>
-                  </motion.div>
-
-                  <motion.div variants={itemVariants} className="border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col justify-center overflow-hidden group relative">
-                    <h3 className="text-4xl font-[1000] tracking-tighter leading-none mb-3 z-10">Portfolio</h3>
-                    <p className="text-sm font-bold text-neutral-600 mb-2 z-10">Check my work here:</p>
-                    <a href="#" className="text-sm font-[1000] underline underline-offset-4 z-10 break-all">view-work.com/portfolio</a>
-                    <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-blue-50 rounded-full group-hover:scale-[4] transition-transform duration-700 ease-in-out -z-0" />
-                  </motion.div>
-                </div>
-              </motion.div>
+    {/* Right Bento Grid */}
+    <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      className="grid grid-cols-12 gap-5 h-[620px] w-full items-stretch"
+    >
+      {/* Toolkit Box */}
+<motion.div variants={itemVariants} className="col-span-4 border-[1.5px] border-black rounded-[3rem] p-10 flex flex-col justify-between bg-white overflow-hidden group">
+  <div>
+    <h3 className="text-4xl font-[1000] tracking-tighter mb-2">{aboutData.toolkit.title}</h3>
+    <p className="text-[17px] font-bold text-neutral-800 leading-snug mb-6">{aboutData.toolkit.description}</p>
+  </div>
+  
+  <div className="flex flex-col gap-4 -mx-10 overflow-hidden">
+    {aboutData.toolkit.categories.map((category, rowIndex) => (
+      <div key={category.name} className="relative w-full">
+        <motion.div 
+          className="flex gap-3 px-10"
+          animate={{ 
+            x: rowIndex % 2 === 0 ? [0, -240] : [-240, 0] 
+          }}
+          transition={{ 
+            duration: 15 + (rowIndex * 2), 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+        >
+          {/* Duplicate icons to ensure seamless loop for each row */}
+          {[...category.icons, ...category.icons, ...category.icons].map((item, i) => (
+            <div 
+              key={i} 
+              className={`w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-sm flex-shrink-0 ${item.color} hover:scale-110 transition-transform`}
+              title={category.name}
+            >
+              {React.createElement(item.icon)}
             </div>
-          </section>
+          ))}
+        </motion.div>
+      </div>
+    ))}
+  </div>
+</motion.div>
 
+      {/* Skills Box (Stickers) */}
+      <motion.div variants={itemVariants} className="col-span-4 border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col">
+        <h3 className="text-4xl font-[1000] tracking-tighter mb-4">{aboutData.skills.title}</h3>
+        <p className="text-[17px] font-bold text-neutral-800 leading-snug mb-8">{aboutData.skills.description}</p>
+        <div className="flex flex-wrap gap-2">
+          {aboutData.skills.items.map((skill, idx) => (
+            <span 
+              key={skill}
+              className="px-4 py-1.5 border-[1.5px] border-black rounded-full text-[11px] font-[1000] uppercase bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+              style={{ transform: `rotate(${idx % 2 === 0 ? -3 : 3}deg)` }}
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Map & Portfolio Stack */}
+      <div className="col-span-4 grid grid-rows-2 gap-5">
+        {/* Map Box */}
+        <motion.div variants={itemVariants} className={`border-[1.5px] border-black rounded-[3rem] overflow-hidden relative ${aboutData.location.pinColor}`}>
+          <div className="absolute inset-0 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px] opacity-20" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div className={`w-8 h-8 ${aboutData.location.pinColor} rounded-full border-[3px] border-white shadow-xl animate-bounce`} />
+            <span className="mt-2 bg-white px-2 py-0.5 rounded border border-black text-[10px] font-black uppercase">
+              {aboutData.location.city}
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Portfolio Box */}
+        <motion.div variants={itemVariants} className="border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col justify-center overflow-hidden group relative">
+          <h3 className="text-4xl font-[1000] tracking-tighter leading-none mb-3 z-10">{aboutData.portfolio.title}</h3>
+          <p className="text-sm font-bold text-neutral-600 mb-2 z-10">{aboutData.portfolio.subtitle}</p>
+          <a href={aboutData.portfolio.url} className="text-sm font-[1000] underline underline-offset-4 z-10 break-all">
+            {aboutData.portfolio.displayLink}
+          </a>
+          <div className={`absolute -right-8 -bottom-8 w-32 h-32 rounded-full group-hover:scale-[4] transition-transform duration-700 ease-in-out -z-0`} />
+        </motion.div>
+      </div>
+    </motion.div>
+  </div>
+</section>
             {/* SECTION 3: WHAT DEFINES ME */}
             <section className="h-screen w-screen shrink-0 flex items-center justify-center px-12 lg:px-24">
               <div className="w-full max-w-6xl">

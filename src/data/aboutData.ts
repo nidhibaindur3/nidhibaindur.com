@@ -1,3 +1,11 @@
+import { 
+  SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, 
+  SiPython, SiFastapi, SiPostgresql, SiDocker,
+  SiPytorch, SiTensorflow, SiScikitlearn, SiPandas,
+  SiWolframmathematica, SiLatex, SiPlotly, SiNumpy 
+} from "react-icons/si";
+import { TbMathFunction, TbVariable } from "react-icons/tb";
+
 export const aboutContent = {
   badge: 'About',
 
@@ -86,70 +94,69 @@ export const FAQ_DATA = [
   { q: "Are you open to work?", a: "I NEED A JOB PLEASE!" },
 ];
 
-export const LEARN_MORE_DATA = [
-  {
-    id: 1,
-    title: 'Toolkit',
-    description: 'A collection of tools I use to build and create.',
-    items: [
-      { id: 1, color: 'bg-[#FFD900]', icon: 'M' },
-      { id: 2, color: 'bg-[#4353FF]', icon: 'W' },
-      { id: 3, color: 'bg-[#000000]', icon: '●' },
-      { id: 4, color: 'bg-[#F24E1E]', icon: 'F' },
-      { id: 5, color: 'bg-[#FF3366]', icon: 'A' },
-    ],
-  },
-  {
-    id: 2,
-    title: 'Skills',
-    description: 'A list of skills I have mastered over the years.',
-    items: ['Figma', 'Next.js', 'React', 'Python', 'Tailwind', 'Motion'],
-  },
-  {
-    id: 3,
-    type: 'location',
-    title: 'Based in',
-    location: 'London, UK',
-    description: 'Working globally from my home base.',
-  },
-  {
-    id: 4,
-    title: 'Portfolio',
-    description: 'A showcase of my work and projects.',
-    link: 'view-work.com',
-  },
-];
-
 export const aboutData = {
-  section2: {
-    boxes: [
-      {
-        id: "toolkit",
-        title: "Toolkit",
-        description: "This is my collection of tools that help me transform ideas into amazing designs.",
-        icons: [
-          { icon: "🛠️", color: "bg-red-500" },
-          { icon: "🎨", color: "bg-blue-500" },
-          // Add more icons as needed
-        ],
-      },
-      {
-        id: "skills",
-        title: "Skills",
-        description: "Methods and strengths I bring to every project.",
-        skills: ["Branding", "UI/UX", "Figma", "Next.js", "React", "Tailwind", "Motion", "Python"],
-      },
-      {
-        id: "map",
-        location: "Dallas, TX",
-        markerColor: "bg-red-600",
-      },
-      {
-        id: "portfolio",
-        title: "Portfolio",
-        description: "Check my work here:",
-        link: "view-work.com/portfolio",
-      },
-    ],
+  header: {
+    title: "Let’s know\nmore about\nme",
+    dotColor: "bg-[#3333FF]"
   },
+  // Categorized Toolkit
+  toolkit: {
+    title: "Toolkit",
+    description: "Bridging the gap between rigorous mathematics and scalable software engineering.",
+    categories: [
+      {
+        name: "Frontend",
+        icons: [
+          { icon: SiReact , color: "bg-[#61DAFB]" },
+          { icon: SiNextdotjs  , color: "bg-black" },
+          { icon: SiTypescript  , color: "bg-[#3178C6]" },
+          { icon: SiTailwindcss , color: "bg-[#06B6D4]" },
+        ]
+      },
+      {
+        name: "Backend & Infra",
+        icons: [
+          { icon: SiPython , color: "bg-[#3776AB]" },
+          { icon: SiFastapi , color: "bg-[#05998B]" },
+          { icon: SiPostgresql , color: "bg-[#4169E1]" },
+          { icon: SiDocker , color: "bg-[#2496ED]" },
+        ]
+      },
+      {
+        name: "ML & Data",
+        icons: [
+          { icon: SiPytorch , color: "bg-[#EE4C2C]" },
+          { icon: SiPandas , color: "bg-[#150458]" },
+          { icon: SiScikitlearn , color: "bg-[#F7931E]" },
+          { icon: SiNumpy , color: "bg-[#013243]" },
+        ]
+      },
+      {
+        name: "Comp Math",
+        icons: [
+          { icon: TbMathFunction, color: "bg-[#6366F1]" },
+          { icon: SiLatex, color: "bg-[#008080]" },
+          { icon: SiWolframmathematica, color: "bg-[#DD1100]" },
+          { icon: TbVariable, color: "bg-[#4F46E5]" },
+        ]
+      }
+    ]
+  },
+  skills: {
+    title: "Expertise",
+    description: "Specialized in numerical analysis and distributed systems.",
+    items: ['Numerical Analysis', 'Distributed Systems', 'Statistical Modeling', 'UI/UX Design', 'Optimization', 'Cloud Architecture', 'Linear Algebra']
+  },
+  location: {
+    city: "London, UK",
+    bgColor: "bg-[#E6E2D3]",
+    pinColor: "bg-red-600"
+  },
+  portfolio: {
+    title: "Portfolio",
+    subtitle: "Check my work here:",
+    displayLink: "view-work.com/portfolio",
+    url: "#",
+    accentColor: "bg-blue-50"
+  }
 };
