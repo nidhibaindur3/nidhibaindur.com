@@ -62,7 +62,7 @@ export default function AboutPage() {
               <div className="flex w-full max-w-7xl items-center gap-20">
                 <div className="flex-1">
                   <h1 className="text-[clamp(4rem,9vw,9rem)] font-[1000] leading-[0.75] tracking-tighter uppercase text-neutral-900">
-                    HI! I’M<br />NIDHI
+                    HI! IM<br />NIDHI
                   </h1>
                   <p className="mt-10 text-xl text-neutral-800 font-medium leading-relaxed max-w-md">
                     Software engineer who likes calm UI, sharp execution, and building things that feel intentional.
@@ -210,7 +210,7 @@ export default function AboutPage() {
           <section className="h-screen w-screen shrink-0 flex flex-col items-center justify-center px-12 lg:px-24">
             <div className="w-full max-w-6xl mb-12 flex items-center gap-4">
               <h1 className="text-5xl font-black uppercase tracking-tighter text-[#E44B2B]">
-                Resources for Artists
+                Who is
               </h1>
               <span className="text-4xl">💡</span>
             </div>

@@ -52,8 +52,8 @@ export const CAT_CARDS = [
 export const RESOURCES = [
   {
     id: '01',
-    title: 'YouTube',
-    label: 'YOUTUBE',
+    title: 'AWARDS',
+    label: 'AWARDS',
     color: 'bg-[#F9F6EE]', // Cream background
     tabColor: 'bg-white',
     description: 'To add.',
@@ -61,8 +61,8 @@ export const RESOURCES = [
   },
   {
     id: '02',
-    title: 'Substack',
-    label: 'SUBSTACK',
+    title: 'INVOLVEMENT',
+    label: 'COMMUNITY INVOLVEMENT',
     color: 'bg-white',
     tabColor: 'bg-[#FFC0CB]', // Pink
     description: 'the business of being a  SWE.',
@@ -70,8 +70,8 @@ export const RESOURCES = [
   },
   {
     id: '03',
-    title: 'Consulting',
-    label: 'CONSULTING',
+    title: 'HOBBIES',
+    label: 'HOBBIES',
     color: 'bg-white',
     tabColor: 'bg-[#FFB347]', // Orange
     description: 'One-on-one sessions.',
@@ -107,8 +107,49 @@ export const LEARN_MORE_DATA = [
   },
   {
     id: 3,
+    type: 'location',
+    title: 'Based in',
+    location: 'London, UK',
+    description: 'Working globally from my home base.',
+  },
+  {
+    id: 4,
     title: 'Portfolio',
     description: 'A showcase of my work and projects.',
     link: 'view-work.com',
   },
 ];
+
+export const aboutData = {
+  section2: {
+    boxes: [
+      {
+        id: "toolkit",
+        title: "Toolkit",
+        description: "This is my collection of tools that help me transform ideas into amazing designs.",
+        icons: [
+          { icon: "🛠️", color: "bg-red-500" },
+          { icon: "🎨", color: "bg-blue-500" },
+          // Add more icons as needed
+        ],
+      },
+      {
+        id: "skills",
+        title: "Skills",
+        description: "Methods and strengths I bring to every project.",
+        skills: ["Branding", "UI/UX", "Figma", "Next.js", "React", "Tailwind", "Motion", "Python"],
+      },
+      {
+        id: "map",
+        location: "Dallas, TX",
+        markerColor: "bg-red-600",
+      },
+      {
+        id: "portfolio",
+        title: "Portfolio",
+        description: "Check my work here:",
+        link: "view-work.com/portfolio",
+      },
+    ],
+  },
+};
