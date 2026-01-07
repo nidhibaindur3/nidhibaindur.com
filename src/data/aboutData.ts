@@ -1,16 +1,27 @@
-import { 
-  SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, 
-  SiPython, SiFastapi, SiPostgresql, SiDocker,
-  SiPytorch, SiTensorflow, SiScikitlearn, SiPandas,
-  SiWolframmathematica, SiLatex, SiPlotly, SiNumpy 
-} from "react-icons/si";
-import { TbMathFunction, TbVariable } from "react-icons/tb";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiPython,
+  SiFastapi,
+  SiPostgresql,
+  SiDocker,
+  SiPytorch,
+  SiTensorflow,
+  SiScikitlearn,
+  SiPandas,
+  SiWolframmathematica,
+  SiLatex,
+  SiPlotly,
+  SiNumpy,
+} from 'react-icons/si';
+import { TbMathFunction, TbVariable } from 'react-icons/tb';
 
 export const aboutContent = {
   badge: 'About',
 
-  headline:
-    'Designer, facilitator, and systems nerd focused on creating calm, resilient products.',
+  headline: 'Designer, facilitator, and systems nerd focused on creating calm, resilient products.',
 
   paragraphs: [
     'I partner closely with product and engineering leads to turn ambiguous ideas into aligned roadmaps. My work blends research, strategy, and meticulous craft so we can deliver experiences that feel effortless and inclusive.',
@@ -51,10 +62,10 @@ export const toolkitIcons = [
 ];
 
 export const CAT_CARDS = [
-  { id: 1, color: "bg-blue-400", title: "Sketching" },
-  { id: 2, color: "bg-orange-400", title: "Cooking" },
-  { id: 3, color: "bg-pink-400", title: "Cafes" },
-  { id: 4, color: "bg-purple-400", title: "Music" },
+  { id: 1, color: 'bg-blue-400', title: 'Sketching' },
+  { id: 2, color: 'bg-orange-400', title: 'Cooking' },
+  { id: 3, color: 'bg-pink-400', title: 'Cafes' },
+  { id: 4, color: 'bg-purple-400', title: 'Music' },
 ];
 
 export const RESOURCES = [
@@ -88,73 +99,84 @@ export const RESOURCES = [
 ];
 
 export const FAQ_DATA = [
-  { q: "How do you say your name?", a: "It's pronounced Nee-dhee!" },
-  { q: "Where are you from?", a: "I'm based in Dallas, TX." },
-  { q: "Where did you study?", a: "I studied Computational mathematics, with a minor in Computer Science and Creative Writing." },
-  { q: "Are you open to work?", a: "I NEED A JOB PLEASE!" },
+  { q: 'How do you say your name?', a: "It's pronounced Nee-dhee!" },
+  { q: 'Where are you from?', a: "I'm based in Dallas, TX." },
+  {
+    q: 'Where did you study?',
+    a: 'I studied Computational mathematics, with a minor in Computer Science and Creative Writing.',
+  },
+  { q: 'Are you open to work?', a: 'I NEED A JOB PLEASE!' },
 ];
 
 export const aboutData = {
   header: {
-    title: "Let’s know\nmore about\nme",
-    dotColor: "bg-[#3333FF]"
+    title: 'Let’s know\nmore about\nme',
+    dotColor: 'bg-[#3333FF]',
   },
   // Categorized Toolkit
   toolkit: {
-    title: "Toolkit",
-    description: "Bridging the gap between rigorous mathematics and scalable software engineering.",
+    title: 'Toolkit',
+    description: 'Bridging the gap between rigorous mathematics and scalable software engineering.',
     categories: [
       {
-        name: "Frontend",
+        name: 'Frontend',
         icons: [
-          { icon: SiReact , color: "bg-[#61DAFB]" },
-          { icon: SiNextdotjs  , color: "bg-black" },
-          { icon: SiTypescript  , color: "bg-[#3178C6]" },
-          { icon: SiTailwindcss , color: "bg-[#06B6D4]" },
-        ]
+          { icon: SiReact, color: 'bg-[#61DAFB]' },
+          { icon: SiNextdotjs, color: 'bg-black' },
+          { icon: SiTypescript, color: 'bg-[#3178C6]' },
+          { icon: SiTailwindcss, color: 'bg-[#06B6D4]' },
+        ],
       },
       {
-        name: "Backend & Infra",
+        name: 'Backend & Infra',
         icons: [
-          { icon: SiPython , color: "bg-[#3776AB]" },
-          { icon: SiFastapi , color: "bg-[#05998B]" },
-          { icon: SiPostgresql , color: "bg-[#4169E1]" },
-          { icon: SiDocker , color: "bg-[#2496ED]" },
-        ]
+          { icon: SiPython, color: 'bg-[#3776AB]' },
+          { icon: SiFastapi, color: 'bg-[#05998B]' },
+          { icon: SiPostgresql, color: 'bg-[#4169E1]' },
+          { icon: SiDocker, color: 'bg-[#2496ED]' },
+        ],
       },
       {
-        name: "ML & Data",
+        name: 'ML & Data',
         icons: [
-          { icon: SiPytorch , color: "bg-[#EE4C2C]" },
-          { icon: SiPandas , color: "bg-[#150458]" },
-          { icon: SiScikitlearn , color: "bg-[#F7931E]" },
-          { icon: SiNumpy , color: "bg-[#013243]" },
-        ]
+          { icon: SiPytorch, color: 'bg-[#EE4C2C]' },
+          { icon: SiPandas, color: 'bg-[#150458]' },
+          { icon: SiScikitlearn, color: 'bg-[#F7931E]' },
+          { icon: SiNumpy, color: 'bg-[#013243]' },
+        ],
       },
       {
-        name: "Comp Math",
+        name: 'Comp Math',
         icons: [
-          { icon: TbMathFunction, color: "bg-[#6366F1]" },
-          { icon: SiLatex, color: "bg-[#008080]" },
-          { icon: SiWolframmathematica, color: "bg-[#DD1100]" },
-          { icon: TbVariable, color: "bg-[#4F46E5]" },
-        ]
-      }
-    ]
+          { icon: TbMathFunction, color: 'bg-[#6366F1]' },
+          { icon: SiLatex, color: 'bg-[#008080]' },
+          { icon: SiWolframmathematica, color: 'bg-[#DD1100]' },
+          { icon: TbVariable, color: 'bg-[#4F46E5]' },
+        ],
+      },
+    ],
   },
   skills: {
-    title: "Expertise",
-    description: "Specialized in numerical analysis and distributed systems.",
-    items: ['Numerical Analysis', 'Distributed Systems', 'Statistical Modeling', 'UI/UX Design', 'Optimization', 'Cloud Architecture', 'Linear Algebra']
+    title: 'Expertise',
+    description: 'Specialized in numerical analysis and distributed systems.',
+    items: [
+      'Numerical Analysis',
+      'Distributed Systems',
+      'Statistical Modeling',
+      'UI/UX Design',
+      'Optimization',
+      'Cloud Architecture',
+      'Linear Algebra',
+    ],
   },
   location: {
-    city: "/images/About/location.png",
+    city: '/images/About/location.png',
   },
   portfolio: {
-    title: "Portfolio",
-    subtitle: "Check my work here:",
-    displayLink: "view-work.com/portfolio",
-    url: "#",
-    accentColor: "bg-blue-50"
-  }
+    title: 'Portfolio',
+    subtitle: 'Check my work here:',
+    displayLink: 'view-work.com/portfolio',
+    url: '#',
+    accentColor: 'bg-blue-50',
+  },
 };

@@ -34,4 +34,3 @@ export default function Header() {
 //   { "href": "https://github.com/nidhibaindur3", "label": "Github", "icon": "Github" },
 //   { "href": "/#contact", "label": "Connect", "icon": "CircleUserRound" }
 // ]
-

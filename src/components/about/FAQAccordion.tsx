@@ -13,15 +13,12 @@ export default function FAQAccordion() {
         <div key={i} className="border-b-[1.5px] border-black">
           <button
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            className="w-full py-6 flex justify-between items-center text-left group"
+            className="group flex w-full items-center justify-between py-6 text-left"
           >
-            <span className="text-xl font-black uppercase tracking-tight group-hover:text-neutral-500 transition-colors">
+            <span className="text-xl font-black tracking-tight uppercase transition-colors group-hover:text-neutral-500">
               {item.q}
             </span>
-            <motion.span
-              animate={{ rotate: openIndex === i ? 180 : 0 }}
-              className="text-2xl"
-            >
+            <motion.span animate={{ rotate: openIndex === i ? 180 : 0 }} className="text-2xl">
               ↓
             </motion.span>
           </button>
@@ -29,11 +26,11 @@ export default function FAQAccordion() {
             {openIndex === i && (
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
+                animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 className="overflow-hidden"
               >
-                <p className="pb-6 text-lg font-medium text-neutral-600 leading-relaxed">
+                <p className="pb-6 text-lg leading-relaxed font-medium text-neutral-600">
                   {item.a}
                 </p>
               </motion.div>

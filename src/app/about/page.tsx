@@ -1,15 +1,21 @@
 'use client';
 
-import React, { useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 
 import Image from 'next/image';
-import { motion, useScroll, useTransform, useSpring, AnimatePresence, type Variants } from 'framer-motion';
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  AnimatePresence,
+  type Variants,
+} from 'framer-motion';
 import Header from '@/components/landing/Header'; // Adjust the import path as needed
 import { aboutData } from '../../data/aboutData';
 import ResourceAccordion from '../../components/about/ResourceAccordion';
 import CardStack from '../../components/about/CardStack';
 import FAQAccordion from '../../components/about/FAQAccordion';
-
 
 // --- VARIANTS ---
 
@@ -17,17 +23,17 @@ const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.1 }
-  }
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+  },
 };
 
 const itemVariants: Variants = {
   hidden: { y: 40, opacity: 0 },
-  visible: { 
-    y: 0, 
-    opacity: 1, 
-    transition: { type: 'spring' as const, stiffness: 100, damping: 20 } 
-  }
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: 'spring' as const, stiffness: 100, damping: 20 },
+  },
 };
 
 const stickerContainer: Variants = {
@@ -36,42 +42,41 @@ const stickerContainer: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.08, // The speed at which they fall one after another
-      delayChildren: 0.2
-    }
-  }
+      delayChildren: 0.2,
+    },
+  },
 };
 
 const stickerFalling: Variants = {
-  hidden: { 
-    y: -300, 
-    opacity: 0, 
-    rotate: -15 
+  hidden: {
+    y: -300,
+    opacity: 0,
+    rotate: -15,
   },
-  visible: { 
-    y: 0, 
-    opacity: 1, 
+  visible: {
+    y: 0,
+    opacity: 1,
     rotate: [-3, 3], // Alternates between -3 and 3 for the tilted look
-    transition: { 
-      type: 'spring', 
-      stiffness: 120, 
-      damping: 12 
-    } 
-  }
+    transition: {
+      type: 'spring',
+      stiffness: 120,
+      damping: 12,
+    },
+  },
 };
-
 
 // --- MAIN PAGE ---
 
 export default function AboutPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ['start start', 'end end'],
   });
 
   // 4 Sections: 0% to -300% (Translate whole width)
-  const xTranslate = useTransform(scrollYProgress, [0, 1], ["0%", "-300%"]);
+  const xTranslate = useTransform(scrollYProgress, [0, 1], ['0%', '-300%']);
   const springX = useSpring(xTranslate, { stiffness: 50, damping: 20, restDelta: 0.001 });
 
   return (
@@ -81,152 +86,192 @@ export default function AboutPage() {
 
       <div ref={containerRef} className="relative h-[500vh] bg-[#FAF9F6]">
         <div className="sticky top-0 h-screen w-full overflow-hidden">
-          <motion.div 
-            style={{ x: springX }} 
-            className="flex h-full w-[400vw] items-center"
-          >
-            
+          <motion.div style={{ x: springX }} className="flex h-full w-[400vw] items-center">
             {/* SECTION 1: HERO */}
-            <section className="h-screen w-screen shrink-0 flex items-center justify-center px-12 lg:px-24">
+            <section className="flex h-screen w-screen shrink-0 items-center justify-center px-12 lg:px-24">
               <div className="flex w-full max-w-7xl items-center gap-20">
                 <div className="flex-1">
-                  <h1 className="text-[clamp(4rem,9vw,9rem)] font-[1000] leading-[0.75] tracking-tighter uppercase text-neutral-900">
-                    HI! IM<br />NIDHI
+                  <h1 className="text-[clamp(4rem,9vw,9rem)] leading-[0.75] font-[1000] tracking-tighter text-neutral-900 uppercase">
+                    HI! IM
+                    <br />
+                    NIDHI
                   </h1>
-                  <p className="mt-10 text-xl text-neutral-800 font-medium leading-relaxed max-w-md">
-                    Software engineer who likes calm UI, sharp execution, and building things that feel intentional.
+                  <p className="mt-10 max-w-md text-xl leading-relaxed font-medium text-neutral-800">
+                    Software engineer who likes calm UI, sharp execution, and building things that
+                    feel intentional.
                   </p>
                 </div>
-                <div className="flex-1 h-[70vh] relative">
+                <div className="relative h-[70vh] flex-1">
                   <div className="relative h-full w-full overflow-hidden rounded-[4rem] border border-black/5 bg-neutral-200">
-                    <Image src="/images/About/aboutnidhi.png" alt="Nidhi" fill className="object-cover" priority />
+                    <Image
+                      src="/images/About/aboutnidhi.png"
+                      alt="Nidhi"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
                   </div>
                 </div>
               </div>
             </section>
 
-          {/* --- SECTION 2: BENTO GRID (1:1 MATCH) --- */}
-<section className="h-screen w-screen shrink-0 flex items-center justify-center px-12 lg:px-20">
-  <div className="flex w-full max-w-[1440px] items-center gap-16">
-    
-    {/* Left Header Column */}
-    <div className="flex-shrink-0 w-[350px]">
-      <div className={`w-5 h-5 ${aboutData.header.dotColor} rounded-full mb-8 shadow-sm`} />
-      <h1 className="text-[85px] font-[1000] leading-[0.8] tracking-tighter uppercase whitespace-pre-line">
-        {aboutData.header.title}
-      </h1>
-    </div>
+            {/* --- SECTION 2: BENTO GRID (1:1 MATCH) --- */}
+            <section className="flex h-screen w-screen shrink-0 items-center justify-center px-12 lg:px-20">
+              <div className="flex w-full max-w-[1440px] items-center gap-16">
+                {/* Left Header Column */}
+                <div className="w-[350px] flex-shrink-0">
+                  <div
+                    className={`h-5 w-5 ${aboutData.header.dotColor} mb-8 rounded-full shadow-sm`}
+                  />
+                  <h1 className="text-[85px] leading-[0.8] font-[1000] tracking-tighter whitespace-pre-line uppercase">
+                    {aboutData.header.title}
+                  </h1>
+                </div>
 
-    {/* Right Bento Grid */}
-    <motion.div 
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      className="grid grid-cols-12 gap-5 h-[620px] w-full items-stretch"
-    >
-      {/* Toolkit Box */}
-<motion.div variants={itemVariants} className="col-span-4 border-[1.5px] border-black rounded-[3rem] p-10 flex flex-col justify-between bg-white overflow-hidden group">
-  <div>
-    <h3 className="text-4xl font-[1000] tracking-tighter mb-2">{aboutData.toolkit.title}</h3>
-    <p className="text-[17px] font-bold text-neutral-800 leading-snug mb-6">{aboutData.toolkit.description}</p>
-  </div>
-  
-  <div className="flex flex-col gap-4 -mx-10 overflow-hidden">
-    {aboutData.toolkit.categories.map((category, rowIndex) => (
-      <div key={category.name} className="relative w-full">
-        <motion.div 
-          className="flex gap-3 px-10"
-          animate={{ 
-            x: rowIndex % 2 === 0 ? [0, -240] : [-240, 0] 
-          }}
-          transition={{ 
-            duration: 15 + (rowIndex * 2), 
-            repeat: Infinity, 
-            ease: "linear" 
-          }}
-        >
-          {/* Duplicate icons to ensure seamless loop for each row */}
-          {[...category.icons, ...category.icons, ...category.icons].map((item, i) => (
-            <div 
-              key={i} 
-              className={`w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl shadow-sm flex-shrink-0 ${item.color} hover:scale-110 transition-transform`}
-              title={category.name}
-            >
-              {React.createElement(item.icon)}
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    ))}
-  </div>
-</motion.div>
+                {/* Right Bento Grid */}
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  className="grid h-[620px] w-full grid-cols-12 items-stretch gap-5"
+                >
+                  {/* Toolkit Box */}
+                  <motion.div
+                    variants={itemVariants}
+                    className="group col-span-4 flex flex-col justify-between overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
+                  >
+                    <div>
+                      <h3 className="mb-2 text-4xl font-[1000] tracking-tighter">
+                        {aboutData.toolkit.title}
+                      </h3>
+                      <p className="mb-6 text-[17px] leading-snug font-bold text-neutral-800">
+                        {aboutData.toolkit.description}
+                      </p>
+                    </div>
 
-      {/* Skills Box (Stickers) */}
-<motion.div 
-  variants={itemVariants} 
-  className="col-span-4 border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col overflow-hidden"
->
-  <h3 className="text-4xl font-[1000] tracking-tighter mb-4">{aboutData.skills.title}</h3>
-  <p className="text-[17px] font-bold text-neutral-800 leading-snug mb-8">{aboutData.skills.description}</p>
-  
-  {/* Wrap the stickers in a motion div to trigger the stagger */}
-  <motion.div 
-    variants={stickerContainer}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-    className="flex flex-wrap gap-2"
-  >
-    {aboutData.skills.items.map((skill, idx) => (
-      <motion.span 
-        key={skill}
-        custom={idx}
-        variants={stickerFalling}
-        className="px-4 py-1.5 border-[1.5px] border-black rounded-full text-[11px] font-[1000] uppercase bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)]"
-      >
-        {skill}
-      </motion.span>
-    ))}
-  </motion.div>
-</motion.div>
+                    <div className="-mx-10 flex flex-col gap-4 overflow-hidden">
+                      {aboutData.toolkit.categories.map((category, rowIndex) => (
+                        <div key={category.name} className="relative w-full">
+                          <motion.div
+                            className="flex gap-3 px-10"
+                            animate={{
+                              x: rowIndex % 2 === 0 ? [0, -240] : [-240, 0],
+                            }}
+                            transition={{
+                              duration: 15 + rowIndex * 2,
+                              repeat: Infinity,
+                              ease: 'linear',
+                            }}
+                          >
+                            {/* Duplicate icons to ensure seamless loop for each row */}
+                            {[...category.icons, ...category.icons, ...category.icons].map(
+                              (item, i) => (
+                                <div
+                                  key={i}
+                                  className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl text-xl text-white shadow-sm ${item.color} transition-transform hover:scale-110`}
+                                  title={category.name}
+                                >
+                                  {React.createElement(item.icon)}
+                                </div>
+                              )
+                            )}
+                          </motion.div>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
 
-{/* Map & Portfolio Stack */}
-<div className="col-span-4 grid grid-rows-2 gap-5">
-  {/* Map Box */}
-  <motion.div
-    variants={itemVariants}
-    className="border-[1.5px] border-black rounded-[3rem] overflow-hidden relative"
-  >
-    <Image
-      src={aboutData.location.city} // Dynamically use the city property for the image
-      alt="Location Map"
-      layout="fill"
-      className="object-cover"
-    />
-  </motion.div>
-        {/* Portfolio Box */}
-        <motion.div variants={itemVariants} className="border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col justify-center overflow-hidden group relative">
-          <h3 className="text-4xl font-[1000] tracking-tighter leading-none mb-3 z-10">{aboutData.portfolio.title}</h3>
-          <p className="text-sm font-bold text-neutral-600 mb-2 z-10">{aboutData.portfolio.subtitle}</p>
-          <a href={aboutData.portfolio.url} className="text-sm font-[1000] underline underline-offset-4 z-10 break-all">
-            {aboutData.portfolio.displayLink}
-          </a>
-          <div className={`absolute -right-8 -bottom-8 w-32 h-32 rounded-full group-hover:scale-[4] transition-transform duration-700 ease-in-out -z-0`} />
-        </motion.div>
-      </div>
-    </motion.div>
-  </div>
-</section>
+                  {/* Skills Box (Stickers) */}
+                  <motion.div
+                    variants={itemVariants}
+                    className="col-span-4 flex flex-col overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
+                  >
+                    <h3 className="mb-4 text-4xl font-[1000] tracking-tighter">
+                      {aboutData.skills.title}
+                    </h3>
+                    <p className="mb-8 text-[17px] leading-snug font-bold text-neutral-800">
+                      {aboutData.skills.description}
+                    </p>
+
+                    {/* Wrap the stickers in a motion div to trigger the stagger */}
+                    <motion.div
+                      variants={stickerContainer}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="flex flex-wrap gap-2"
+                    >
+                      {aboutData.skills.items.map((skill, idx) => (
+                        <motion.span
+                          key={skill}
+                          custom={idx}
+                          variants={stickerFalling}
+                          className="rounded-full border-[1.5px] border-black bg-white px-4 py-1.5 text-[11px] font-[1000] uppercase shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+                        >
+                          {skill}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Map & Portfolio Stack */}
+                  <div className="col-span-4 grid grid-rows-2 gap-5">
+                    {/* Map Box */}
+                    <motion.div
+                      variants={itemVariants}
+                      className="relative overflow-hidden rounded-[3rem] border-[1.5px] border-black"
+                    >
+                      <Image
+                        src={aboutData.location.city} // Dynamically use the city property for the image
+                        alt="Location Map"
+                        layout="fill"
+                        className="object-cover"
+                      />
+                    </motion.div>
+                    {/* Portfolio Box */}
+                    <motion.div
+                      variants={itemVariants}
+                      className="group relative flex flex-col justify-center overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
+                    >
+                      <h3 className="z-10 mb-3 text-4xl leading-none font-[1000] tracking-tighter">
+                        {aboutData.portfolio.title}
+                      </h3>
+                      <p className="z-10 mb-2 text-sm font-bold text-neutral-600">
+                        {aboutData.portfolio.subtitle}
+                      </p>
+                      <a
+                        href={aboutData.portfolio.url}
+                        className="z-10 text-sm font-[1000] break-all underline underline-offset-4"
+                      >
+                        {aboutData.portfolio.displayLink}
+                      </a>
+                      <div
+                        className={`absolute -right-8 -bottom-8 -z-0 h-32 w-32 rounded-full transition-transform duration-700 ease-in-out group-hover:scale-[4]`}
+                      />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
             {/* SECTION 3: WHAT DEFINES ME */}
-            <section className="h-screen w-screen shrink-0 flex items-center justify-center px-12 lg:px-24">
+            <section className="flex h-screen w-screen shrink-0 items-center justify-center px-12 lg:px-24">
               <div className="w-full max-w-6xl">
-                <h1 className="text-8xl font-[1000] tracking-tighter mb-20 uppercase">What defines me</h1>
+                <h1 className="mb-20 text-8xl font-[1000] tracking-tighter uppercase">
+                  What defines me
+                </h1>
                 <div className="grid grid-cols-2 gap-x-20 gap-y-16">
                   {[1, 2, 3, 4].map((id) => (
-                    <motion.div key={id} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} className="border-t-[1.5px] border-black pt-8">
-                      <span className="text-2xl font-[1000] italic text-neutral-400">0{id}.</span>
-                      <h3 className="text-3xl font-[1000] uppercase mt-2">Core Pillar</h3>
-                      <p className="mt-4 text-neutral-600 text-xl font-medium leading-snug">Consistency across engineering and design leads to better products.</p>
+                    <motion.div
+                      key={id}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      className="border-t-[1.5px] border-black pt-8"
+                    >
+                      <span className="text-2xl font-[1000] text-neutral-400 italic">0{id}.</span>
+                      <h3 className="mt-2 text-3xl font-[1000] uppercase">Core Pillar</h3>
+                      <p className="mt-4 text-xl leading-snug font-medium text-neutral-600">
+                        Consistency across engineering and design leads to better products.
+                      </p>
                     </motion.div>
                   ))}
                 </div>
@@ -234,92 +279,86 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 4: HOBBIES & CARD STACK (Side-by-Side) */}
-            <section className="h-screen w-screen shrink-0 flex items-center justify-center px-12 lg:px-32">
-              <div className="flex flex-row items-center justify-between w-full max-w-7xl gap-20">
-                
+            <section className="flex h-screen w-screen shrink-0 items-center justify-center px-12 lg:px-32">
+              <div className="flex w-full max-w-7xl flex-row items-center justify-between gap-20">
                 {/* Left Side: Text Content */}
                 <div className="flex-1 text-left">
-                  <motion.h1 
+                  <motion.h1
                     initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    className="text-[clamp(3rem,5vw,5.5rem)] font-[1000] tracking-tighter uppercase mb-8 leading-[0.9]"
+                    className="mb-8 text-[clamp(3rem,5vw,5.5rem)] leading-[0.9] font-[1000] tracking-tighter uppercase"
                   >
                     When I am not <br /> on my laptop, <br /> I am probably...
                   </motion.h1>
-                  
-                  <motion.p 
+
+                  <motion.p
                     initial={{ x: -30, opacity: 0 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-2xl text-neutral-700 font-medium max-w-xl leading-relaxed"
+                    className="max-w-xl text-2xl leading-relaxed font-medium text-neutral-700"
                   >
                     Sketching, cooking up new recipes, or dreaming of adopting more cats!!
                   </motion.p>
-                  
-                  <p className="mt-12 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400">
+
+                  <p className="mt-12 text-[10px] font-black tracking-[0.2em] text-neutral-400 uppercase">
                     Interactive Stack — Swipe cards to explore
                   </p>
                 </div>
 
                 {/* Right Side: Tilted Card Stack */}
-                <div className="flex-1 flex justify-center items-center">
+                <div className="flex flex-1 items-center justify-center">
                   <div className="relative">
                     <CardStack />
                   </div>
                 </div>
-
               </div>
             </section>
 
             {/* NEW SLIDE 5: RESOURCES FOR ARTISTS */}
-          <section className="h-screen w-screen shrink-0 flex flex-col items-center justify-center px-12 lg:px-24">
-            <div className="w-full max-w-6xl mb-12 flex items-center gap-4">
-              <h1 className="text-5xl font-black uppercase tracking-tighter text-[#E44B2B]">
-                Who is
-              </h1>
-              <span className="text-4xl">💡</span>
-            </div>
-            
-            <ResourceAccordion />
-          </section>
+            <section className="flex h-screen w-screen shrink-0 flex-col items-center justify-center px-12 lg:px-24">
+              <div className="mb-12 flex w-full max-w-6xl items-center gap-4">
+                <h1 className="text-5xl font-black tracking-tighter text-[#E44B2B] uppercase">
+                  Who is
+                </h1>
+                <span className="text-4xl">💡</span>
+              </div>
 
+              <ResourceAccordion />
+            </section>
 
-          {/* SLIDE 6: FAQ SECTION */}
-<section className="h-screen w-screen shrink-0 flex items-center justify-center px-12 lg:px-24 bg-[#FAF9F6]">
-  <div className="flex flex-row items-start justify-between w-full max-w-7xl gap-24">
-    
-    {/* Left: Illustrative Image */}
-    <div className="flex-1 sticky top-24">
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        className="relative aspect-[3/4] w-full rounded-[2rem] border-[1.5px] border-black overflow-hidden shadow-[20px_20px_0px_rgba(0,0,0,0.05)]"
-      >
-        <Image 
-          src="/images/hero.jpeg" 
-          alt="Illustration" 
-          fill 
-          className="object-cover"
-        />
-      </motion.div>
-    </div>
+            {/* SLIDE 6: FAQ SECTION */}
+            <section className="flex h-screen w-screen shrink-0 items-center justify-center bg-[#FAF9F6] px-12 lg:px-24">
+              <div className="flex w-full max-w-7xl flex-row items-start justify-between gap-24">
+                {/* Left: Illustrative Image */}
+                <div className="sticky top-24 flex-1">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="relative aspect-[3/4] w-full overflow-hidden rounded-[2rem] border-[1.5px] border-black shadow-[20px_20px_0px_rgba(0,0,0,0.05)]"
+                  >
+                    <Image
+                      src="/images/hero.jpeg"
+                      alt="Illustration"
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </div>
 
-    {/* Right: FAQ Content */}
-    <div className="flex-[1.2] py-12">
-      <motion.h1 
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        className="text-6xl font-[1000] uppercase tracking-tighter mb-12 text-[#4B6B3F]"
-      >
-        Frequently Asked Questions
-      </motion.h1>
-      
-      <FAQAccordion />
-    </div>
+                {/* Right: FAQ Content */}
+                <div className="flex-[1.2] py-12">
+                  <motion.h1
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    className="mb-12 text-6xl font-[1000] tracking-tighter text-[#4B6B3F] uppercase"
+                  >
+                    Frequently Asked Questions
+                  </motion.h1>
 
-  </div>
-</section>
-
+                  <FAQAccordion />
+                </div>
+              </div>
+            </section>
           </motion.div>
         </div>
       </div>

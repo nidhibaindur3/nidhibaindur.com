@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -30,29 +30,28 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#F2F1EE] text-[#1a1a1a] selection:bg-black selection:text-white overflow-x-hidden relative flex flex-col justify-center">
-        
+      <main className="relative flex min-h-screen flex-col justify-center overflow-x-hidden bg-[#F2F1EE] text-[#1a1a1a] selection:bg-black selection:text-white">
         {/* Main Content Wrapper */}
-        <div className="max-w-[1800px] w-full mx-auto px-[5vw] py-[10vh]">
-          
+        <div className="mx-auto w-full max-w-[1800px] px-[5vw] py-[10vh]">
           {/* Dynamic Editorial Layout: Flex-row-reverse allows the right side 
               to remain anchored while the left side expands. */}
-          <div className="flex flex-col lg:flex-row gap-y-16 lg:gap-x-12 justify-between items-start">
-            
+          <div className="flex flex-col items-start justify-between gap-y-16 lg:flex-row lg:gap-x-12">
             {/* LEFT COLUMN: The Headline Block */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="w-full lg:max-w-[55%] lg:pt-[5vh]"
             >
-              <h1 className="font-serif leading-[0.85] tracking-[-0.05em] flex flex-col"
-                  style={{ fontSize: 'clamp(3.5rem, 10vw, 11rem)' }}>
+              <h1
+                className="flex flex-col font-serif leading-[0.85] tracking-[-0.05em]"
+                style={{ fontSize: 'clamp(3.5rem, 10vw, 11rem)' }}
+              >
                 <span className="block whitespace-nowrap">Want to start</span>
-                <span className="italic block">a new project?</span>
+                <span className="block italic">a new project?</span>
               </h1>
-              
-              <div className="font-serif italic text-[clamp(1.5rem,3vw,2.5rem)] mt-12 opacity-80 flex flex-wrap items-center gap-x-3 gap-y-1 leading-tight">
+
+              <div className="mt-12 flex flex-wrap items-center gap-x-3 gap-y-1 font-serif text-[clamp(1.5rem,3vw,2.5rem)] leading-tight italic opacity-80">
                 <span>Or just say</span>
                 <div className="relative inline-flex min-w-[4ch]">
                   <AnimatePresence mode="wait">
@@ -62,7 +61,7 @@ export default function ContactPage() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -15 }}
                       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                      className="whitespace-nowrap inline-block"
+                      className="inline-block whitespace-nowrap"
                     >
                       {GREETINGS[index]}
                     </motion.span>
@@ -72,65 +71,69 @@ export default function ContactPage() {
             </motion.div>
 
             {/* RIGHT COLUMN: The Interactive Block */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 1 }}
-              className="w-full lg:max-w-[40%] lg:mt-[32vh] flex flex-col space-y-[12vh]"
+              className="flex w-full flex-col space-y-[12vh] lg:mt-[32vh] lg:max-w-[40%]"
             >
               {/* Email / Click to Copy */}
               <div className="group relative">
-                <div className="flex justify-between items-end mb-6">
-                  <p className="text-[10px] uppercase tracking-[0.4em] opacity-40 font-sans font-bold">
+                <div className="mb-6 flex items-end justify-between">
+                  <p className="font-sans text-[10px] font-bold tracking-[0.4em] uppercase opacity-40">
                     Inquiries — Click to copy
                   </p>
                   <AnimatePresence>
                     {copied && (
-                      <motion.span 
+                      <motion.span
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0 }}
-                        className="text-[9px] uppercase font-bold tracking-widest bg-black text-white px-2 py-0.5"
+                        className="bg-black px-2 py-0.5 text-[9px] font-bold tracking-widest text-white uppercase"
                       >
                         Copied
                       </motion.span>
                     )}
                   </AnimatePresence>
                 </div>
-                
-                <button 
+
+                <button
                   onClick={copyToClipboard}
-                  className="font-serif block relative pb-3 text-left w-full group outline-none"
-                  style={{ 
+                  className="group relative block w-full pb-3 text-left font-serif outline-none"
+                  style={{
                     fontSize: 'clamp(1.2rem, 2.8vw, 3.5rem)',
-                    lineHeight: '1.1'
+                    lineHeight: '1.1',
                   }}
                 >
                   {/* Word-break ensures the long email wraps beautifully on mobile and small laptops */}
-                  <span className="relative z-10 break-words block transition-opacity duration-300 group-hover:opacity-40">
+                  <span className="relative z-10 block break-words transition-opacity duration-300 group-hover:opacity-40">
                     {CONTACT_DATA.email}
                   </span>
-                  
+
                   {/* Dynamic Underline */}
-                  <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-black transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-[0.16, 1, 0.3, 1]"></span>
-                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-black/10"></span>
+                  <span className="ease-[0.16, 1, 0.3, 1] absolute bottom-0 left-0 h-[1.5px] w-full origin-left scale-x-0 transform bg-black transition-transform duration-700 group-hover:scale-x-100"></span>
+                  <span className="absolute bottom-0 left-0 h-[1px] w-full bg-black/10"></span>
                 </button>
               </div>
 
               {/* Socials: Larger, clearer spacing */}
               <div className="border-t border-black/10 pt-10">
-                 <p className="text-[10px] uppercase tracking-[0.4em] mb-10 opacity-40 font-sans font-bold">Follow</p>
-                 <div className="grid grid-cols-2 gap-x-8 gap-y-12">
+                <p className="mb-10 font-sans text-[10px] font-bold tracking-[0.4em] uppercase opacity-40">
+                  Follow
+                </p>
+                <div className="grid grid-cols-2 gap-x-8 gap-y-12">
                   {CONTACT_DATA.socials.map((link) => (
-                    <a 
-                      key={link.label} 
-                      href={link.href} 
-                      target="_blank" 
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="font-serif text-[clamp(1.5rem,2vw,2.2rem)] italic hover:opacity-40 transition-all duration-300 flex items-center justify-between group/link"
+                      className="group/link flex items-center justify-between font-serif text-[clamp(1.5rem,2vw,2.2rem)] italic transition-all duration-300 hover:opacity-40"
                     >
                       <span>{link.label}</span>
-                      <span className="text-xs not-italic opacity-20 group-hover:opacity-100 transition-all group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                      <span className="text-xs not-italic opacity-20 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100">
+                        ↗
+                      </span>
                     </a>
                   ))}
                 </div>

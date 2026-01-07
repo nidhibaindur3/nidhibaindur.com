@@ -17,10 +17,7 @@ export default function Hero() {
   const typingFinished = typedName === nameText;
 
   return (
-    <section
-      id="home"
-      className="relative isolate overflow-hidden bg-white pt-32 pb-24"
-    >
+    <section id="home" className="relative isolate overflow-hidden bg-white pt-32 pb-24">
       {/* Background Glow */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -42,7 +39,7 @@ export default function Hero() {
             viewport={{ once: true }}
             className="space-y-5"
           >
-            <h1 className="relative inline-flex items-baseline pt-1 text-4xl font-semibold leading-[1.15] tracking-tight text-neutral-900 sm:text-5xl lg:text-[3.35rem]">
+            <h1 className="relative inline-flex items-baseline pt-1 text-4xl leading-[1.15] font-semibold tracking-tight text-neutral-900 sm:text-5xl lg:text-[3.35rem]">
               <span>{typedName}</span>
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
@@ -64,9 +61,7 @@ export default function Hero() {
             viewport={{ once: true }}
             className="flex flex-wrap items-center gap-2 text-sm text-neutral-500"
           >
-            <span className="font-medium text-neutral-700">
-              Currently exploring
-            </span>
+            <span className="font-medium text-neutral-700">Currently exploring</span>
 
             {focusAreas.map((item) => (
               <motion.span
@@ -94,7 +89,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -top-10 -left-10 hidden h-40 w-40 rounded-full bg-main-theme/20 blur-2xl lg:block"
+            className="bg-main-theme/20 absolute -top-10 -left-10 hidden h-40 w-40 rounded-full blur-2xl lg:block"
           />
           <motion.div
             animate={{ y: [0, 20, 0] }}

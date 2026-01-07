@@ -8,7 +8,7 @@ export default function ResourceAccordion() {
   const [activeTab, setActiveTab] = useState('01');
 
   return (
-    <div className="flex w-full max-w-6xl h-[500px] border-[1.5px] border-black overflow-hidden bg-white">
+    <div className="flex h-[500px] w-full max-w-6xl overflow-hidden border-[1.5px] border-black bg-white">
       {RESOURCES.map((res) => {
         const isActive = activeTab === res.id;
 
@@ -16,17 +16,17 @@ export default function ResourceAccordion() {
           <motion.div
             key={res.id}
             initial={false}
-            animate={{ 
+            animate={{
               width: isActive ? '100%' : '60px',
             }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className={`relative flex h-full border-r-[1.5px] last:border-r-0 border-black ${res.color} overflow-hidden`}
+            className={`relative flex h-full border-r-[1.5px] border-black last:border-r-0 ${res.color} overflow-hidden`}
           >
             <button
               onClick={() => setActiveTab(res.id)}
-              className={`absolute left-0 top-0 bottom-0 w-[60px] flex items-center justify-center border-r-[1.5px] border-black ${res.tabColor} z-20`}
+              className={`absolute top-0 bottom-0 left-0 flex w-[60px] items-center justify-center border-r-[1.5px] border-black ${res.tabColor} z-20`}
             >
-              <span className="rotate-[-90deg] whitespace-nowrap font-black text-xs tracking-widest uppercase">
+              <span className="rotate-[-90deg] text-xs font-black tracking-widest whitespace-nowrap uppercase">
                 {res.label}
               </span>
             </button>
@@ -37,19 +37,22 @@ export default function ResourceAccordion() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0 }}
-                  className="ml-[60px] flex flex-row items-center justify-center gap-12 px-16 w-full h-full"
+                  className="ml-[60px] flex h-full w-full flex-row items-center justify-center gap-12 px-16"
                 >
-                  <div className="w-48 h-48 bg-neutral-100 rounded-2xl flex items-center justify-center border border-black/5 shadow-inner">
+                  <div className="flex h-48 w-48 items-center justify-center rounded-2xl border border-black/5 bg-neutral-100 shadow-inner">
                     <span className="text-4xl">🎨</span>
                   </div>
-                  
+
                   <div className="flex-1 text-left">
-                    <span className="text-orange-500 font-bold text-lg mb-2 block">{res.id}</span>
-                    <h2 className="text-5xl font-serif font-medium mb-6">{res.title}</h2>
-                    <p className="text-lg text-neutral-600 max-w-md leading-relaxed mb-8">
+                    <span className="mb-2 block text-lg font-bold text-orange-500">{res.id}</span>
+                    <h2 className="mb-6 font-serif text-5xl font-medium">{res.title}</h2>
+                    <p className="mb-8 max-w-md text-lg leading-relaxed text-neutral-600">
                       {res.description}
                     </p>
-                    <a href="#" className="inline-block border-b-2 border-orange-500 pb-1 font-bold text-sm tracking-tighter hover:text-orange-500 transition-colors">
+                    <a
+                      href="#"
+                      className="inline-block border-b-2 border-orange-500 pb-1 text-sm font-bold tracking-tighter transition-colors hover:text-orange-500"
+                    >
                       {res.linkText}
                     </a>
                   </div>

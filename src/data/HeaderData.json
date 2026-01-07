@@ -2,5 +2,5 @@
   { "href": "/about", "label": "About" },
   { "href": "/projects", "label": "Work" },
   { "href": "/#Resume", "label": "Resume" },
-  { "href": "/contact", "label": "Contact"}
+  { "href": "/contact", "label": "Contact" }
 ]

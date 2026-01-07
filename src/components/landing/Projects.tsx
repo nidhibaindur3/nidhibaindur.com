@@ -124,25 +124,17 @@
 //   );
 // }
 
+'use client';
 
+import Image from 'next/image';
+import { Card } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
-"use client"
-
-import Image from "next/image"
-import { Card } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
-
-function Media({
-  className,
-  imgClassName,
-}: {
-  className?: string
-  imgClassName?: string
-}) {
+function Media({ className, imgClassName }: { className?: string; imgClassName?: string }) {
   return (
     <div
       className={cn(
-        "absolute right-6 top-6 h-[160px] w-[220px] rounded-3xl bg-white/70 shadow-md ring-1 ring-black/5 overflow-hidden",
+        'absolute top-6 right-6 h-[160px] w-[220px] overflow-hidden rounded-3xl bg-white/70 shadow-md ring-1 ring-black/5',
         className
       )}
     >
@@ -151,13 +143,13 @@ function Media({
           src="/images/hero.jpeg"
           alt=""
           fill
-          className={cn("object-cover", imgClassName)}
+          className={cn('object-cover', imgClassName)}
           sizes="240px"
           priority
         />
       </div>
     </div>
-  )
+  );
 }
 
 function Tile({
@@ -167,32 +159,28 @@ function Tile({
   surface,
   children,
 }: {
-  title: string
-  description: string
-  className: string
-  surface: string
-  children?: React.ReactNode
+  title: string;
+  description: string;
+  className: string;
+  surface: string;
+  children?: React.ReactNode;
 }) {
   return (
     <Card
       className={cn(
-        "relative overflow-hidden rounded-[28px] border-0 shadow-sm",
+        'relative overflow-hidden rounded-[28px] border-0 shadow-sm',
         surface,
         className
       )}
     >
       <div className="p-7">
-        <h3 className="text-2xl font-semibold tracking-tight text-black/90">
-          {title}
-        </h3>
-        <p className="mt-2 max-w-[34ch] text-sm leading-relaxed text-black/60">
-          {description}
-        </p>
+        <h3 className="text-2xl font-semibold tracking-tight text-black/90">{title}</h3>
+        <p className="mt-2 max-w-[34ch] text-sm leading-relaxed text-black/60">{description}</p>
       </div>
 
       {children}
     </Card>
-  )
+  );
 }
 
 export default function BentoGrid() {
@@ -202,10 +190,10 @@ export default function BentoGrid() {
       <div className="mx-auto w-full max-w-6xl px-6">
         <div
           className={cn(
-            "grid gap-6",
-            "grid-cols-1",
+            'grid gap-6',
+            'grid-cols-1',
             // desktop blueprint
-            "lg:grid-cols-12 lg:[grid-auto-rows:230px]"
+            'lg:[grid-auto-rows:230px] lg:grid-cols-12'
           )}
         >
           {/* 1) Left tall (spans 2 rows) */}
@@ -216,9 +204,9 @@ export default function BentoGrid() {
             className="lg:col-span-5 lg:row-span-2"
           >
             {/* place “content” lower like the reference */}
-            <div className="absolute left-7 bottom-7 right-7 h-14 rounded-2xl bg-white/70 shadow-sm ring-1 ring-black/5" />
-            <Media className="right-10 top-16 rotate-[-8deg]" />
-            <Media className="right-24 top-10 rotate-[10deg] h-[150px] w-[200px] opacity-90" />
+            <div className="absolute right-7 bottom-7 left-7 h-14 rounded-2xl bg-white/70 shadow-sm ring-1 ring-black/5" />
+            <Media className="top-16 right-10 rotate-[-8deg]" />
+            <Media className="top-10 right-24 h-[150px] w-[200px] rotate-[10deg] opacity-90" />
           </Tile>
 
           {/* 2) Top-right horizontal */}
@@ -228,8 +216,8 @@ export default function BentoGrid() {
             surface="bg-[#F28AA8]"
             className="lg:col-span-7 lg:row-span-1"
           >
-            <Media className="right-8 top-10 rotate-[6deg]" />
-            <Media className="right-40 top-6 rotate-[-10deg] h-[150px] w-[200px] opacity-90" />
+            <Media className="top-10 right-8 rotate-[6deg]" />
+            <Media className="top-6 right-40 h-[150px] w-[200px] rotate-[-10deg] opacity-90" />
           </Tile>
 
           {/* 3) Middle-right: Wallet (square-ish) */}
@@ -240,8 +228,8 @@ export default function BentoGrid() {
             className="lg:col-span-4 lg:row-span-1"
           >
             {/* mimic the dark wallet bar */}
-            <div className="absolute left-7 top-24 h-16 w-[260px] rounded-2xl bg-black/80 shadow-md ring-1 ring-black/10" />
-            <div className="absolute left-10 top-28 text-white/90 text-sm">$132.00</div>
+            <div className="absolute top-24 left-7 h-16 w-[260px] rounded-2xl bg-black/80 shadow-md ring-1 ring-black/10" />
+            <div className="absolute top-28 left-10 text-sm text-white/90">$132.00</div>
           </Tile>
 
           {/* 3) Middle-right: Inbox (square) */}
@@ -251,7 +239,7 @@ export default function BentoGrid() {
             surface="bg-[#F2D06B]"
             className="lg:col-span-3 lg:row-span-1"
           >
-            <div className="absolute left-7 right-7 bottom-7 space-y-2">
+            <div className="absolute right-7 bottom-7 left-7 space-y-2">
               <div className="h-10 rounded-2xl bg-white/70 ring-1 ring-black/5" />
               <div className="h-10 rounded-2xl bg-white/70 ring-1 ring-black/5" />
               <div className="h-10 rounded-2xl bg-white/70 ring-1 ring-black/5" />
@@ -265,12 +253,9 @@ export default function BentoGrid() {
             surface="bg-[#F3A15F]"
             className="lg:col-span-9 lg:row-span-1"
           >
-            <div className="absolute right-7 top-12 grid w-[520px] grid-cols-4 gap-3">
+            <div className="absolute top-12 right-7 grid w-[520px] grid-cols-4 gap-3">
               {Array.from({ length: 8 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="h-14 rounded-2xl bg-white/70 ring-1 ring-black/5"
-                />
+                <div key={i} className="h-14 rounded-2xl bg-white/70 ring-1 ring-black/5" />
               ))}
             </div>
           </Tile>
@@ -282,7 +267,7 @@ export default function BentoGrid() {
             surface="bg-[#BFD3EA]"
             className="lg:col-span-3 lg:row-span-1"
           >
-            <div className="absolute left-7 right-7 bottom-7 h-24 rounded-2xl bg-white/60 ring-1 ring-black/5 overflow-hidden">
+            <div className="absolute right-7 bottom-7 left-7 h-24 overflow-hidden rounded-2xl bg-white/60 ring-1 ring-black/5">
               <div className="relative h-full w-full">
                 <Image
                   src="/images/hero.jpeg"
@@ -298,5 +283,5 @@ export default function BentoGrid() {
         </div>
       </div>
     </section>
-  )
+  );
 }
