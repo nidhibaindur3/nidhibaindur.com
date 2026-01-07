@@ -148,9 +148,7 @@ export const aboutData = {
     items: ['Numerical Analysis', 'Distributed Systems', 'Statistical Modeling', 'UI/UX Design', 'Optimization', 'Cloud Architecture', 'Linear Algebra']
   },
   location: {
-    city: "London, UK",
-    bgColor: "bg-[#E6E2D3]",
-    pinColor: "bg-red-600"
+    city: "/images/About/location.png",
   },
   portfolio: {
     title: "Portfolio",

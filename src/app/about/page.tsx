@@ -30,6 +30,35 @@ const itemVariants: Variants = {
   }
 };
 
+const stickerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08, // The speed at which they fall one after another
+      delayChildren: 0.2
+    }
+  }
+};
+
+const stickerFalling: Variants = {
+  hidden: { 
+    y: -300, 
+    opacity: 0, 
+    rotate: -15 
+  },
+  visible: { 
+    y: 0, 
+    opacity: 1, 
+    rotate: [-3, 3], // Alternates between -3 and 3 for the tilted look
+    transition: { 
+      type: 'spring', 
+      stiffness: 120, 
+      damping: 12 
+    } 
+  }
+};
+
 
 // --- MAIN PAGE ---
 
@@ -70,7 +99,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex-1 h-[70vh] relative">
                   <div className="relative h-full w-full overflow-hidden rounded-[4rem] border border-black/5 bg-neutral-200">
-                    <Image src="/images/aboutnidhi.png" alt="Nidhi" fill className="object-cover" priority />
+                    <Image src="/images/About/aboutnidhi.png" alt="Nidhi" fill className="object-cover" priority />
                   </div>
                 </div>
               </div>
@@ -133,35 +162,48 @@ export default function AboutPage() {
 </motion.div>
 
       {/* Skills Box (Stickers) */}
-      <motion.div variants={itemVariants} className="col-span-4 border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col">
-        <h3 className="text-4xl font-[1000] tracking-tighter mb-4">{aboutData.skills.title}</h3>
-        <p className="text-[17px] font-bold text-neutral-800 leading-snug mb-8">{aboutData.skills.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {aboutData.skills.items.map((skill, idx) => (
-            <span 
-              key={skill}
-              className="px-4 py-1.5 border-[1.5px] border-black rounded-full text-[11px] font-[1000] uppercase bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)]"
-              style={{ transform: `rotate(${idx % 2 === 0 ? -3 : 3}deg)` }}
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </motion.div>
+<motion.div 
+  variants={itemVariants} 
+  className="col-span-4 border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col overflow-hidden"
+>
+  <h3 className="text-4xl font-[1000] tracking-tighter mb-4">{aboutData.skills.title}</h3>
+  <p className="text-[17px] font-bold text-neutral-800 leading-snug mb-8">{aboutData.skills.description}</p>
+  
+  {/* Wrap the stickers in a motion div to trigger the stagger */}
+  <motion.div 
+    variants={stickerContainer}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    className="flex flex-wrap gap-2"
+  >
+    {aboutData.skills.items.map((skill, idx) => (
+      <motion.span 
+        key={skill}
+        custom={idx}
+        variants={stickerFalling}
+        className="px-4 py-1.5 border-[1.5px] border-black rounded-full text-[11px] font-[1000] uppercase bg-white shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+      >
+        {skill}
+      </motion.span>
+    ))}
+  </motion.div>
+</motion.div>
 
-      {/* Map & Portfolio Stack */}
-      <div className="col-span-4 grid grid-rows-2 gap-5">
-        {/* Map Box */}
-        <motion.div variants={itemVariants} className={`border-[1.5px] border-black rounded-[3rem] overflow-hidden relative ${aboutData.location.pinColor}`}>
-          <div className="absolute inset-0 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px] opacity-20" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <div className={`w-8 h-8 ${aboutData.location.pinColor} rounded-full border-[3px] border-white shadow-xl animate-bounce`} />
-            <span className="mt-2 bg-white px-2 py-0.5 rounded border border-black text-[10px] font-black uppercase">
-              {aboutData.location.city}
-            </span>
-          </div>
-        </motion.div>
-
+{/* Map & Portfolio Stack */}
+<div className="col-span-4 grid grid-rows-2 gap-5">
+  {/* Map Box */}
+  <motion.div
+    variants={itemVariants}
+    className="border-[1.5px] border-black rounded-[3rem] overflow-hidden relative"
+  >
+    <Image
+      src={aboutData.location.city} // Dynamically use the city property for the image
+      alt="Location Map"
+      layout="fill"
+      className="object-cover"
+    />
+  </motion.div>
         {/* Portfolio Box */}
         <motion.div variants={itemVariants} className="border-[1.5px] border-black rounded-[3rem] p-10 bg-white flex flex-col justify-center overflow-hidden group relative">
           <h3 className="text-4xl font-[1000] tracking-tighter leading-none mb-3 z-10">{aboutData.portfolio.title}</h3>
