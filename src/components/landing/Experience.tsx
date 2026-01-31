@@ -39,7 +39,7 @@ export default function Experience() {
     <section id="experience" className="bg-neutral-50 py-24">
       <div className="section-container max-w-6xl space-y-16">
         <div className="flex flex-col items-center gap-4 text-center">
-          <span className="rounded-full border border-neutral-200 bg-white px-4 py-1 text-sm font-medium text-neutral-600">
+          <span className="rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600">
             Experience
           </span>
           <h2 className="text-3xl font-semibold tracking-tight text-balance text-neutral-900 sm:text-4xl">
@@ -56,7 +56,7 @@ export default function Experience() {
             {experience.map((role) => (
               <div key={role.company} className="relative sm:pl-16">
                 <div className="absolute top-3 left-0 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-[var(--color-main-theme)] shadow-sm sm:block" />
-                <div className="rounded-3xl border border-neutral-200 bg-white/80 p-8 shadow-[0_25px_80px_-55px_rgba(15,23,42,0.55)] backdrop-blur">
+                <div className="rounded-3xl border border-neutral-200 bg-main-theme/80 p-8 shadow-[0_25px_80px_-55px_rgba(15,23,42,0.55)] backdrop-blur">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-xl font-semibold text-neutral-900">{role.role}</h3>

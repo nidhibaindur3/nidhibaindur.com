@@ -43,7 +43,7 @@ export default function About() {
             {pillars.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-neutral-100 bg-white/80 p-6 shadow-sm"
+                className="rounded-2xl border border-neutral-100 bg-main-theme/80 p-6 shadow-sm"
               >
                 <h3 className="text-lg font-semibold text-neutral-900">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-600">{item.description}</p>

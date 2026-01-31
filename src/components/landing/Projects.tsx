@@ -42,7 +42,7 @@
 
 // export default function Projects() {
 //   return (
-//     <section id="projects" className="bg-white py-24">
+//     <section id="projects" className="bg-main-theme py-24">
 //       <div className="section-container max-w-6xl space-y-16">
 //         <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center">
 //           <span className="self-center rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1 text-sm font-medium text-neutral-600">
@@ -85,7 +85,7 @@
 //                     {project.stack.map((item) => (
 //                       <span
 //                         key={item}
-//                         className="rounded-full border border-neutral-200 bg-white px-3 py-1"
+//                         className="rounded-full border border-neutral-200 bg-main-theme px-3 py-1"
 //                       >
 //                         {item}
 //                       </span>
@@ -101,7 +101,7 @@
 //                     </a>
 //                   </Button>
 //                 </div>
-//                 <div className="relative overflow-hidden rounded-3xl border border-neutral-100 bg-white">
+//                 <div className="relative overflow-hidden rounded-3xl border border-neutral-100 bg-main-theme">
 //                   <Image
 //                     src={project.image}
 //                     alt={project.title}
@@ -110,7 +110,7 @@
 //                     className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
 //                   />
 //                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/0 via-white/0 to-white/40 opacity-0 transition group-hover:opacity-100" />
-//                   <div className="pointer-events-none absolute inset-x-6 bottom-6 flex items-center justify-between rounded-2xl border border-white/60 bg-white/80 px-4 py-2 text-xs font-medium text-neutral-500 shadow-sm">
+//                   <div className="pointer-events-none absolute inset-x-6 bottom-6 flex items-center justify-between rounded-2xl border border-white/60 bg-main-theme/80 px-4 py-2 text-xs font-medium text-neutral-500 shadow-sm">
 //                     <span>Case 0{index + 1}</span>
 //                     <span>Role: End-to-end owner</span>
 //                   </div>
@@ -134,7 +134,7 @@ function Media({ className, imgClassName }: { className?: string; imgClassName?:
   return (
     <div
       className={cn(
-        'absolute top-6 right-6 h-[160px] w-[220px] overflow-hidden rounded-3xl bg-white/70 shadow-md ring-1 ring-black/5',
+        'absolute top-6 right-6 h-[160px] w-[220px] overflow-hidden rounded-3xl bg-main-theme/70 shadow-md ring-1 ring-black/5',
         className
       )}
     >
@@ -204,7 +204,7 @@ export default function BentoGrid() {
             className="lg:col-span-5 lg:row-span-2"
           >
             {/* place “content” lower like the reference */}
-            <div className="absolute right-7 bottom-7 left-7 h-14 rounded-2xl bg-white/70 shadow-sm ring-1 ring-black/5" />
+            <div className="absolute right-7 bottom-7 left-7 h-14 rounded-2xl bg-main-theme/70 shadow-sm ring-1 ring-black/5" />
             <Media className="top-16 right-10 rotate-[-8deg]" />
             <Media className="top-10 right-24 h-[150px] w-[200px] rotate-[10deg] opacity-90" />
           </Tile>
@@ -240,9 +240,9 @@ export default function BentoGrid() {
             className="lg:col-span-3 lg:row-span-1"
           >
             <div className="absolute right-7 bottom-7 left-7 space-y-2">
-              <div className="h-10 rounded-2xl bg-white/70 ring-1 ring-black/5" />
-              <div className="h-10 rounded-2xl bg-white/70 ring-1 ring-black/5" />
-              <div className="h-10 rounded-2xl bg-white/70 ring-1 ring-black/5" />
+              <div className="h-10 rounded-2xl bg-main-theme/70 ring-1 ring-black/5" />
+              <div className="h-10 rounded-2xl bg-main-theme/70 ring-1 ring-black/5" />
+              <div className="h-10 rounded-2xl bg-main-theme/70 ring-1 ring-black/5" />
             </div>
           </Tile>
 
@@ -255,7 +255,7 @@ export default function BentoGrid() {
           >
             <div className="absolute top-12 right-7 grid w-[520px] grid-cols-4 gap-3">
               {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="h-14 rounded-2xl bg-white/70 ring-1 ring-black/5" />
+                <div key={i} className="h-14 rounded-2xl bg-main-theme/70 ring-1 ring-black/5" />
               ))}
             </div>
           </Tile>
@@ -267,7 +267,7 @@ export default function BentoGrid() {
             surface="bg-[#BFD3EA]"
             className="lg:col-span-3 lg:row-span-1"
           >
-            <div className="absolute right-7 bottom-7 left-7 h-24 overflow-hidden rounded-2xl bg-white/60 ring-1 ring-black/5">
+            <div className="absolute right-7 bottom-7 left-7 h-24 overflow-hidden rounded-2xl bg-main-theme/60 ring-1 ring-black/5">
               <div className="relative h-full w-full">
                 <Image
                   src="/images/hero.jpeg"

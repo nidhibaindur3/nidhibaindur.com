@@ -74,7 +74,7 @@ export const RESOURCES = [
     title: 'AWARDS',
     label: 'AWARDS',
     color: 'bg-[#F9F6EE]', // Cream background
-    tabColor: 'bg-white',
+    tabColor: 'bg-main-theme',
     description: 'To add.',
     linkText: 'WATCH NOW',
   },
@@ -82,7 +82,7 @@ export const RESOURCES = [
     id: '02',
     title: 'INVOLVEMENT',
     label: 'COMMUNITY INVOLVEMENT',
-    color: 'bg-white',
+    color: 'bg-main-theme',
     tabColor: 'bg-[#FFC0CB]', // Pink
     description: 'the business of being a  SWE.',
     linkText: 'READ MORE',
@@ -91,7 +91,7 @@ export const RESOURCES = [
     id: '03',
     title: 'HOBBIES',
     label: 'HOBBIES',
-    color: 'bg-white',
+    color: 'bg-main-theme',
     tabColor: 'bg-[#FFB347]', // Orange
     description: 'One-on-one sessions.',
     linkText: 'BOOK SESSION',

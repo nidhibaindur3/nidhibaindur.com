@@ -105,7 +105,7 @@ function AnimatedCard({
       style={{ y, opacity, scale, visibility, zIndex: total - index }}
       className="absolute inset-x-0 top-0 will-change-transform"
     >
-      <Card className="overflow-hidden border border-white/30 bg-white/75 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/70">
+      <Card className="overflow-hidden border border-white/30 bg-main-theme/75 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/70">
         {/* Image at top */}
         <div className="relative h-56 w-full">
           <Image

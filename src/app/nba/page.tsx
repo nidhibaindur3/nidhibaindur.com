@@ -14,7 +14,7 @@ import HorizontalMain from '@/components/land/HorizontalMain';
 
 export default function page() {
   return (
-    <main className="bg-white text-neutral-900">
+    <main className="bg-main-theme text-neutral-900">
       {/* Keep */}
       <Header />
       <Hero />

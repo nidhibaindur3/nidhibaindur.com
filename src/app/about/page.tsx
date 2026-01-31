@@ -138,7 +138,7 @@ export default function AboutPage() {
                   {/* Toolkit Box */}
                   <motion.div
                     variants={itemVariants}
-                    className="group col-span-4 flex flex-col justify-between overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
+                    className="group col-span-4 flex flex-col justify-between overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-main-theme p-10"
                   >
                     <div>
                       <h3 className="mb-2 text-4xl font-[1000] tracking-tighter">
@@ -184,7 +184,7 @@ export default function AboutPage() {
                   {/* Skills Box (Stickers) */}
                   <motion.div
                     variants={itemVariants}
-                    className="col-span-4 flex flex-col overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
+                    className="col-span-4 flex flex-col overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-main-theme p-10"
                   >
                     <h3 className="mb-4 text-4xl font-[1000] tracking-tighter">
                       {aboutData.skills.title}
@@ -206,7 +206,7 @@ export default function AboutPage() {
                           key={skill}
                           custom={idx}
                           variants={stickerFalling}
-                          className="rounded-full border-[1.5px] border-black bg-white px-4 py-1.5 text-[11px] font-[1000] uppercase shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+                          className="rounded-full border-[1.5px] border-black bg-main-theme px-4 py-1.5 text-[11px] font-[1000] uppercase shadow-[2px_2px_0px_rgba(0,0,0,1)]"
                         >
                           {skill}
                         </motion.span>
@@ -231,7 +231,7 @@ export default function AboutPage() {
                     {/* Portfolio Box */}
                     <motion.div
                       variants={itemVariants}
-                      className="group relative flex flex-col justify-center overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
+                      className="group relative flex flex-col justify-center overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-main-theme p-10"
                     >
                       <h3 className="z-10 mb-3 text-4xl leading-none font-[1000] tracking-tighter">
                         {aboutData.portfolio.title}

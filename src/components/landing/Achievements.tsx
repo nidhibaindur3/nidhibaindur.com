@@ -15,7 +15,7 @@ export default function Achivements() {
       <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-white via-white/80 to-transparent" />
       <div className="section-container relative z-10 max-w-6xl space-y-14">
         <div className="flex flex-col gap-6 text-center">
-          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-1 text-sm font-medium text-neutral-600">
+          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600">
             <span className="inline-block h-2 w-2 rounded-full bg-[var(--color-main-theme)]" />
             Recent highlights
           </span>
@@ -48,7 +48,7 @@ export default function Achivements() {
           {achievements.map((item) => (
             <Card
               key={item.title}
-              className="group relative overflow-hidden rounded-[2.5rem] border border-neutral-200 bg-white/80 shadow-[0_25px_80px_-55px_rgba(15,23,42,0.55)] transition hover:-translate-y-1 hover:shadow-[0_35px_120px_-65px_rgba(15,23,42,0.6)]"
+              className="group relative overflow-hidden rounded-[2.5rem] border border-neutral-200 bg-main-theme/80 shadow-[0_25px_80px_-55px_rgba(15,23,42,0.55)] transition hover:-translate-y-1 hover:shadow-[0_35px_120px_-65px_rgba(15,23,42,0.6)]"
             >
               <div className="grid gap-6 p-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] lg:items-center">
                 <div className="space-y-5">

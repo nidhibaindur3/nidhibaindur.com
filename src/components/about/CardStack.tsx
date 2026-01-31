@@ -52,7 +52,7 @@ export default function CardStack() {
                 }}
                 className={`absolute inset-0 h-full w-full rounded-[2.5rem] border-[1.5px] border-black ${card.color} flex flex-col items-center justify-center shadow-2xl`}
               >
-                <div className="mb-4 h-16 w-16 rounded-full bg-white/20" />
+                <div className="mb-4 h-16 w-16 rounded-full bg-main-theme/20" />
                 <span className="px-6 text-center text-lg font-[1000] tracking-tighter text-white uppercase">
                   {card.title}
                 </span>
