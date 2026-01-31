@@ -30,7 +30,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="relative flex min-h-screen flex-col justify-center overflow-x-hidden bg-[#F2F1EE] text-[#1a1a1a] selection:bg-black selection:text-white">
+      <main className="relative flex min-h-screen flex-col justify-center overflow-x-hidden bg-main-theme text-[#1a1a1a] selection:bg-black selection:text-white">
         {/* Main Content Wrapper */}
         <div className="mx-auto w-full max-w-[1800px] px-[5vw] py-[10vh]">
           {/* Dynamic Editorial Layout: Flex-row-reverse allows the right side 

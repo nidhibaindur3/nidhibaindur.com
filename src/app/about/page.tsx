@@ -84,7 +84,7 @@ export default function AboutPage() {
       {/* Header Navigation */}
       <Header />
 
-      <div ref={containerRef} className="relative h-[500vh] bg-[#FAF9F6]">
+      <div ref={containerRef} className="relative h-[500vh] bg-main-theme">
         <div className="sticky top-0 h-screen w-full overflow-hidden">
           <motion.div style={{ x: springX }} className="flex h-full w-[400vw] items-center">
             {/* SECTION 1: HERO */}
@@ -327,7 +327,7 @@ export default function AboutPage() {
             </section>
 
             {/* SLIDE 6: FAQ SECTION */}
-            <section className="flex h-screen w-screen shrink-0 items-center justify-center bg-[#FAF9F6] px-12 lg:px-24">
+            <section className="flex h-screen w-screen shrink-0 items-center justify-center bg-main-theme px-12 lg:px-24">
               <div className="flex w-full max-w-7xl flex-row items-start justify-between gap-24">
                 {/* Left: Illustrative Image */}
                 <div className="sticky top-24 flex-1">
