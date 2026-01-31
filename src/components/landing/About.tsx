@@ -2,14 +2,14 @@ import { aboutContent, quickFacts, pillars } from '@/data/aboutData';
 
 export default function About() {
   return (
-    <section id="about" className="bg-white py-24">
+    <section id="about" className="bg-transparent py-24">
       <div className="section-container max-w-6xl space-y-16">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)]">
           {/* LEFT */}
           <div className="space-y-6">
             {/* Badge + Headline */}
             <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1 text-sm font-medium text-neutral-600">
-              <span className="inline-block h-2 w-2 rounded-full bg-[var(--color-main-theme)]" />
+              <span className="inline-block h-2 w-2 rounded-full bg-main-theme" />
               {aboutContent.badge}
             </span>
 

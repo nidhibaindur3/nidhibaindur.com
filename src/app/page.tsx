@@ -13,7 +13,7 @@ import { AppleTimelineThemed as SplitScroll } from '@/components/land/splitscree
 
 export default function page() {
   return (
-    <main className="bg-white text-neutral-900">
+    <main className="bg-main-theme text-neutral-900">
       <Header />
       <Hero />
       <About />

@@ -55,6 +55,70 @@ const projects: Project[] = [
     timeline: '2024',
     solutionAnchorLabel: 'Jump to Solution',
   },
+
+
+  {
+    slug: 'canhomes1',
+    name: 'CanHomes',
+    description: 'Housing assistance platform for international students relocating to Canada.',
+    url: 'https://canhomes.vicilabs.dev',
+    tags: ['EdTech', 'Startup', 'UX', 'Web App'],
+
+    hero: '/images/p2.jpg',
+    eyebrow: 'Startup Project',
+
+    team: ['Aditya Baindur', 'Jane The First', 'Randy The Second'],
+    role: ['Product Strategy', 'UX Research', 'Interface Design', 'Full-Stack Development'],
+
+    tools: ['Next.js', 'Supabase', 'Figma'],
+
+    timeline: '2024',
+    solutionAnchorLabel: 'Jump to Solution',
+  },
+
+
+  {
+    slug: 'canhomes2',
+    name: 'CanHomes',
+    description: 'Housing assistance platform for international students relocating to Canada.',
+    url: 'https://canhomes.vicilabs.dev',
+    tags: ['EdTech', 'Startup', 'UX', 'Web App'],
+
+    hero: '/images/p2.jpg',
+    eyebrow: 'Startup Project',
+
+    team: ['Aditya Baindur', 'Jane The First', 'Randy The Second'],
+    role: ['Product Strategy', 'UX Research', 'Interface Design', 'Full-Stack Development'],
+
+    tools: ['Next.js', 'Supabase', 'Figma'],
+
+    timeline: '2024',
+    solutionAnchorLabel: 'Jump to Solution',
+  },
+
+
+
+
+  {
+    slug: 'canhomes3',
+    name: 'CanHomes',
+    description: 'Housing assistance platform for international students relocating to Canada.',
+    url: 'https://canhomes.vicilabs.dev',
+    tags: ['EdTech', 'Startup', 'UX', 'Web App'],
+
+    hero: '/images/p2.jpg',
+    eyebrow: 'Startup Project',
+
+    team: ['Aditya Baindur', 'Jane The First', 'Randy The Second'],
+    role: ['Product Strategy', 'UX Research', 'Interface Design', 'Full-Stack Development'],
+
+    tools: ['Next.js', 'Supabase', 'Figma'],
+
+    timeline: '2024',
+    solutionAnchorLabel: 'Jump to Solution',
+  },
+
+
 ];
 
 export default projects;

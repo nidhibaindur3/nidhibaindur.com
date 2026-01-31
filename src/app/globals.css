@@ -77,7 +77,7 @@
   --foreground: oklch(0.145 0 0);
 
   /* 🔑 raw theme vars (SOURCE OF TRUTH) */
-  --main-theme: oklch(40.42% 0.15672 28.034);
+  --main-theme: oklch(0.9359 0.0222 74.09);
   --secondary-theme: oklch(0 0 0);
 
   /* surfaces */
