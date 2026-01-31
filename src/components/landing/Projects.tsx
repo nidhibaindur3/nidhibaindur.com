@@ -66,7 +66,7 @@
 //                 <div className="space-y-6">
 //                   <div className="flex flex-wrap items-center gap-3 text-xs font-medium text-neutral-500">
 //                     <Badge
-//                       className="rounded-full bg-[var(--color-main-theme)]/15 px-3 py-1 text-[var(--color-main-theme)]"
+//                       className="rounded-full bg-main-theme/15 px-3 py-1 text-[var(--color-main-theme)]"
 //                       variant="secondary"
 //                     >
 //                       {project.year}

@@ -60,7 +60,7 @@ export default function Skills() {
               >
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-lg font-semibold text-neutral-900">{capability.title}</h3>
-                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[var(--color-main-theme)]" />
+                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-main-theme" />
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-600">
                   {capability.description}

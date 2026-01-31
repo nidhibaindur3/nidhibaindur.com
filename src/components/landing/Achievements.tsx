@@ -16,7 +16,7 @@ export default function Achivements() {
       <div className="section-container relative z-10 max-w-6xl space-y-14">
         <div className="flex flex-col gap-6 text-center">
           <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600">
-            <span className="inline-block h-2 w-2 rounded-full bg-[var(--color-main-theme)]" />
+            <span className="inline-block h-2 w-2 rounded-full bg-main-theme" />
             Recent highlights
           </span>
           <div className="mx-auto max-w-2xl space-y-4">
@@ -30,7 +30,7 @@ export default function Achivements() {
           </div>
           <div className="mx-auto flex flex-wrap justify-center gap-3 text-xs font-medium text-neutral-500">
             <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200/80 px-3 py-1">
-              <span className="inline-block h-2 w-2 rounded-full bg-[var(--color-main-theme)]" />
+              <span className="inline-block h-2 w-2 rounded-full bg-main-theme" />
               Design excellence
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200/80 px-3 py-1">
@@ -55,7 +55,7 @@ export default function Achivements() {
                   <div className="flex items-center justify-between text-xs font-medium text-neutral-500">
                     <Badge
                       variant="secondary"
-                      className="rounded-full bg-[var(--color-main-theme)]/15 px-3 py-1 text-[var(--color-main-theme)]"
+                      className="rounded-full bg-main-theme/15 px-3 py-1 text-[var(--color-main-theme)]"
                     >
                       {item.category}
                     </Badge>

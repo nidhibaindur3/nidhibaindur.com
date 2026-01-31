@@ -55,7 +55,7 @@ export default function Experience() {
           <div className="space-y-10">
             {experience.map((role) => (
               <div key={role.company} className="relative sm:pl-16">
-                <div className="absolute top-3 left-0 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-[var(--color-main-theme)] shadow-sm sm:block" />
+                <div className="absolute top-3 left-0 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 border-white bg-main-theme shadow-sm sm:block" />
                 <div className="rounded-3xl border border-neutral-200 bg-main-theme/80 p-8 shadow-[0_25px_80px_-55px_rgba(15,23,42,0.55)] backdrop-blur">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <div>
@@ -70,7 +70,7 @@ export default function Experience() {
                   <ul className="mt-5 space-y-3 text-sm text-neutral-600">
                     {role.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-3">
-                        <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--color-main-theme)]" />
+                        <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-main-theme" />
                         <span>{bullet}</span>
                       </li>
                     ))}
