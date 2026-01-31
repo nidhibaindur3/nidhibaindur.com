@@ -10,7 +10,7 @@ export default function Achivements() {
   return (
     <section
       id="achievements"
-      className="relative border-t border-neutral-100 bg-neutral-50/60 py-24"
+      className="relative border-t border-neutral-100 bg-main-theme/60 py-24"
     >
       <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-white via-white/80 to-transparent" />
       <div className="section-container relative z-10 max-w-6xl space-y-14">

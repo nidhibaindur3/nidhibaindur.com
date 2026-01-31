@@ -36,7 +36,7 @@ const experience = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-neutral-50 py-24">
+    <section id="experience" className="bg-main-theme py-24">
       <div className="section-container max-w-6xl space-y-16">
         <div className="flex flex-col items-center gap-4 text-center">
           <span className="rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600">

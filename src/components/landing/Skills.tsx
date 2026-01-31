@@ -36,7 +36,7 @@ const tools = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative overflow-hidden bg-neutral-50 py-24">
+    <section id="skills" className="relative overflow-hidden bg-main-theme py-24">
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white via-transparent to-transparent" />
       <div className="section-container relative z-10 max-w-6xl space-y-14">
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
@@ -69,7 +69,7 @@ export default function Skills() {
                   {capability.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1"
+                      className="rounded-full border border-neutral-200 bg-main-theme px-3 py-1"
                     >
                       {item}
                     </span>
@@ -89,7 +89,7 @@ export default function Skills() {
               {tools.map((tool) => (
                 <div
                   key={tool}
-                  className="flex items-center justify-center rounded-2xl border border-neutral-100 bg-neutral-50 px-4 py-3 text-sm font-medium text-neutral-700 shadow-sm"
+                  className="flex items-center justify-center rounded-2xl border border-neutral-100 bg-main-theme px-4 py-3 text-sm font-medium text-neutral-700 shadow-sm"
                 >
                   {tool}
                 </div>

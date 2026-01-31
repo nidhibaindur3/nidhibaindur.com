@@ -5,7 +5,7 @@ import sections from '@/data/splitsScreen';
 
 export function AppleTimelineThemed() {
   return (
-    <section className="relative w-full bg-neutral-50">
+    <section className="relative w-full bg-main-theme">
       <div className="max-w-10xl relative mx-auto grid grid-cols-1 gap-20 lg:grid-cols-[1fr_1fr]">
         {/* LEFT — THEMED CONTENT */}
         <div className="space-y-32 px-20">

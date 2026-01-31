@@ -45,7 +45,7 @@
 //     <section id="projects" className="bg-main-theme py-24">
 //       <div className="section-container max-w-6xl space-y-16">
 //         <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center">
-//           <span className="self-center rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1 text-sm font-medium text-neutral-600">
+//           <span className="self-center rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600">
 //             Selected work
 //           </span>
 //           <h2 className="text-3xl font-semibold tracking-tight text-balance text-neutral-900 sm:text-4xl">
@@ -60,7 +60,7 @@
 //           {projects.map((project, index) => (
 //             <Card
 //               key={project.title}
-//               className="group relative overflow-hidden rounded-[2.75rem] border border-neutral-200 bg-neutral-50/70 shadow-[0_30px_90px_-60px_rgba(15,23,42,0.45)] transition hover:-translate-y-1 hover:shadow-[0_40px_120px_-70px_rgba(15,23,42,0.55)]"
+//               className="group relative overflow-hidden rounded-[2.75rem] border border-neutral-200 bg-main-theme/70 shadow-[0_30px_90px_-60px_rgba(15,23,42,0.45)] transition hover:-translate-y-1 hover:shadow-[0_40px_120px_-70px_rgba(15,23,42,0.55)]"
 //             >
 //               <div className="grid gap-10 p-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center">
 //                 <div className="space-y-6">

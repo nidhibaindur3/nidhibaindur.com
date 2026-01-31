@@ -42,7 +42,7 @@ export default function StickyCards() {
     <section
       ref={sectionRef}
       style={{ height: `${CARDS.length * 90}vh` }}
-      className="relative bg-neutral-50 dark:bg-neutral-950"
+      className="relative bg-main-theme dark:bg-neutral-950"
     >
       {/* Background */}
       <div className="fixed inset-0 -z-10 bg-[url('/your-bg.jpg')] bg-cover bg-center" />
