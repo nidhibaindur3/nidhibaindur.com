@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CAT_CARDS } from '../../data/aboutData';
+import Image from 'next/image';
+import { cards as initialCards } from '../../data/aboutData';
 
 export default function CardStack() {
-  const [cards, setCards] = useState(CAT_CARDS);
+  const [cards, setCards] = useState(initialCards);
 
   const moveToEnd = (from: number) => {
     const newCards = [...cards];
@@ -13,6 +14,15 @@ export default function CardStack() {
     newCards.push(item);
     setCards(newCards);
   };
+
+  // Auto-animate cards every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      moveToEnd(0); 
+    }, 3000);
+
+    return () => clearInterval(interval); 
+  }, [cards]);
 
   return (
     <div className="relative flex h-[450px] w-72 items-center justify-center">
@@ -50,12 +60,21 @@ export default function CardStack() {
                     moveToEnd(index);
                   }
                 }}
-                className={`absolute inset-0 h-full w-full rounded-[2.5rem] border-[1.5px] border-black ${card.color} flex flex-col items-center justify-center shadow-2xl`}
+                className={`absolute inset-0 h-full w-full rounded-[2.5rem] border-[1.5px] border-black bg-white flex flex-col items-center justify-center shadow-2xl`}
               >
-                <div className="mb-4 h-16 w-16 rounded-full bg-white/20" />
-                <span className="px-6 text-center text-lg font-[1000] tracking-tighter text-white uppercase">
-                  {card.title}
-                </span>
+                {/* Add the image for the card */}
+                <div className="relative h-[500px] w-full overflow-hidden rounded-t-[2.5rem]">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    layout="fill"
+                    objectFit="cover" // Ensures the image fits and crops if necessary
+                  />
+                </div>
+                {/* Card title */}
+                <div className="p-4 bg-white text-center opacity-100">
+                  <h2 className="text-lg font-bold">{card.title}</h2>
+                </div>
               </motion.li>
             );
           })}

@@ -61,11 +61,67 @@ export const toolkitIcons = [
   { id: 5, color: 'bg-[#FF3366]', icon: 'A' },
 ];
 
-export const CAT_CARDS = [
-  { id: 1, color: 'bg-blue-400', title: 'Sketching' },
-  { id: 2, color: 'bg-orange-400', title: 'Cooking' },
-  { id: 3, color: 'bg-pink-400', title: 'Cafes' },
-  { id: 4, color: 'bg-purple-400', title: 'Music' },
+export const cards = [
+  {
+    id: 1,
+    image: '/images/About/hobbies/thebean.jpeg',
+    title: 'Going on spontaneous trips',
+    color: 'border-neutral-200',
+    description: 'This is the first card description.',
+  },
+  {
+    id: 2,
+    image: '/images/About/hobbies/cooking_bday.jpeg',
+    title: 'Cooking',
+    color: 'border-neutral-200',
+    description: 'This is the second card description.',
+  },
+  {
+    id: 3,
+    image: '/images/About/hobbies/elliotbay.jpeg',
+    title: 'Reflecting',
+    color: 'border-neutral-200',
+  },
+  {
+    id: 4,
+    image: '/images/About/hobbies/explorenid.jpeg',
+    title: 'Exploring new citites',
+    color: 'border-neutral-200',
+  },
+  {
+    id: 5,
+    image: '/images/About/hobbies/nidhenna.jpeg',
+    title: 'Scribbling',
+    color: 'border-neutral-200',
+  },
+
+  {
+    id: 6,
+    image: '/images/About/hobbies/painting_grapevine.jpeg',
+    title: 'Painting',
+    color: 'border-neutral-200',
+  },
+];
+
+export const awards = [
+  { year: "2024", title: "Advanced Certificate of Achievement - RIT Undergraduate Research Scholar" },
+  { year: "2024", title: "Undergraduate Research Scholar" },
+  { year: "2024", title: "Legacy Award" },
+  { year: "2024", title: "SMS Citizens of the Year - Bernoulli Award" },
+  { year: "2024", title: "SMS Graduating Research Scholars Award" },
+  { year: "2023", title: "Mildred Feinbloom Scholarship" },
+  { year: "2023", title: "RIT Emerson Fellowship 2023" },
+  { year: "2023", title: "RIT SMS Euler Award for Excellence" },
+  { year: "2022", title: "College of Science Student Financial Award" },
+  { year: "2022", title: "Nathaniel Rochester Society Scholarship" },
+  { year: "2022", title: "RIT Honors Emerson Summer Undergraduate Research Fellowship 2022" },
+  { year: "2022", title: "Martin Setto Memorial Scholarship Award" },
+  { year: "2022", title: "Outstanding International Student Service Award" },
+  { year: "2021", title: "Fellow - Inclusive Excellence Undergraduate Summer Research Fellowship" },
+  { year: "2021", title: "Fellow - Newman Civic Fellowship" },
+  { year: "2021", title: "RIT Honors Program" },
+  { year: "2020", title: "Dean's List" },
+  { year: "2020", title: "RIT Founders Scholarships for International Students" },
 ];
 
 export const RESOURCES = [
@@ -80,6 +136,15 @@ export const RESOURCES = [
   },
   {
     id: '02',
+    title: 'WORK EXPERIENCE',
+    label: 'WORK EXPERIENCE',
+    color: 'bg-white',
+    tabColor: 'bg-[#F9F6EE]', // Orange
+    description: 'One-on-one sessions.',
+    linkText: 'BOOK SESSION',
+  },
+  {
+    id: '03',
     title: 'INVOLVEMENT',
     label: 'COMMUNITY INVOLVEMENT',
     color: 'bg-white',
@@ -88,15 +153,89 @@ export const RESOURCES = [
     linkText: 'READ MORE',
   },
   {
-    id: '03',
-    title: 'HOBBIES',
-    label: 'HOBBIES',
+    id: '04',
+    title: 'COURSEWORK',
+    label: 'COURSEWORK',
     color: 'bg-white',
     tabColor: 'bg-[#FFB347]', // Orange
     description: 'One-on-one sessions.',
     linkText: 'BOOK SESSION',
   },
+  
 ];
+
+export const Work_Experience = [
+    {
+      title: 'Software Engineer - Ecolab',
+      startDate: 'July 2024',
+      endDate: 'Present',
+    },
+    {
+      title: 'Undergraduate Student Researcher - Rochester Institute of Technology',
+      startDate: 'May 2022',
+      endDate: 'July 2024',
+    },
+    {
+      title: 'Notetaker - Rochester Institute of Technology',
+      startDate: 'September 2023',
+      endDate: 'June 2024',
+    },
+    {
+      title: 'Event Coordinator and Department Assistant - International Hospitality and Service Innovation Dept',
+      startDate: 'September 2023',
+      endDate: 'June 2024',
+    },
+    {
+      title: 'Research Assistant - Rochester Institute of Technology',
+      startDate: 'March 2023',
+      endDate: 'June 2024',
+    },
+    {
+      title: 'Hospitality & Events Support - Student Employee - College of Science Dean\'s Office, RIT',
+      startDate: 'September 2022',
+      endDate: 'June 2024',
+    },
+    {
+      title: 'Resident Assistant - Rochester Institute of Technology',
+      startDate: 'August 2021',
+      endDate: 'June 2024',
+    },
+    {
+      title: 'COS Scheduling Office Student Employee - Dean\'s Office, RIT',
+      startDate: 'May 2023',
+      endDate: 'June 2023',
+    },
+    {
+      title: 'Undergraduate Research - Rochester Institute of Technology',
+      startDate: 'January 2021',
+      endDate: 'May 2022',
+    },
+    {
+      title: 'Peer Facilitator - Culture Talk with Toni and Nidhi - Rochester Institute of Technology',
+      startDate: 'August 2021',
+      endDate: 'April 2022',
+    },
+    {
+      title: 'RIT 365 Peer Facilitator - Rochester Institute of Technology',
+      startDate: 'August 2021',
+      endDate: 'December 2021',
+    },
+    {
+      title: 'Enrollment Marketing Content Creator - Admissions Office, RIT',
+      startDate: 'September 2020',
+      endDate: 'August 2021',
+    },
+    {
+      title: 'Student Researcher - Michel Lab, United States',
+      startDate: 'June 2021',
+      endDate: 'July 2021',
+    },
+    {
+      title: 'Goldman Sachs Possibilities Summit Participant - Goldman Sachs',
+      startDate: 'January 2023',
+      endDate: 'March 2023',
+    },
+  ];
 
 export const FAQ_DATA = [
   { q: 'How do you say your name?', a: "It's pronounced Nee-dhee!" },

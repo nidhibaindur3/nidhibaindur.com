@@ -291,22 +291,10 @@ export default function AboutPage() {
                     When I am not <br /> on my laptop, <br /> I am probably...
                   </motion.h1>
 
-                  <motion.p
-                    initial={{ x: -30, opacity: 0 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="max-w-xl text-2xl leading-relaxed font-medium text-neutral-700"
-                  >
-                    Sketching, cooking up new recipes, or dreaming of adopting more cats!!
-                  </motion.p>
-
-                  <p className="mt-12 text-[10px] font-black tracking-[0.2em] text-neutral-400 uppercase">
-                    Interactive Stack — Swipe cards to explore
-                  </p>
                 </div>
 
                 {/* Right Side: Tilted Card Stack */}
-                <div className="flex flex-1 items-center justify-center">
+                <div className="flex flex-1 items-center justify-center ">
                   <div className="relative">
                     <CardStack />
                   </div>
@@ -318,9 +306,9 @@ export default function AboutPage() {
             <section className="flex h-screen w-screen shrink-0 flex-col items-center justify-center px-12 lg:px-24">
               <div className="mb-12 flex w-full max-w-6xl items-center gap-4">
                 <h1 className="text-5xl font-black tracking-tighter text-[#E44B2B] uppercase">
-                  Who is
+                  More about me
                 </h1>
-                <span className="text-4xl">💡</span>
+                <span className="text-4xl"></span>
               </div>
 
               <ResourceAccordion />
