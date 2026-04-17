@@ -12,7 +12,7 @@ import {
   type Variants,
 } from 'framer-motion';
 import Header from '@/components/landing/Header'; // Adjust the import path as needed
-import { aboutData } from '../../data/aboutData';
+import {pillars } from '../../data/aboutData';
 import ResourceAccordion from '../../components/about/ResourceAccordion';
 import CardStack from '../../components/about/CardStack';
 import FAQAccordion from '../../components/about/FAQAccordion';
@@ -260,22 +260,36 @@ export default function AboutPage() {
                   What defines me
                 </h1>
                 <div className="grid grid-cols-2 gap-x-20 gap-y-16">
-                  {[1, 2, 3, 4].map((id) => (
+                  {pillars.map((pillar) => (
                     <motion.div
-                      key={id}
+                      key={pillar.id}
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       className="border-t-[1.5px] border-black pt-8"
                     >
-                      <span className="text-2xl font-[1000] text-neutral-400 italic">0{id}.</span>
-                      <h3 className="mt-2 text-3xl font-[1000] uppercase">Core Pillar</h3>
+                      <span className="text-2xl font-[1000] text-neutral-400 italic">
+                        0{pillar.id}.
+                      </span>
+                      <h3 className="mt-2 text-3xl font-[1000] uppercase">{pillar.title}</h3>
                       <p className="mt-4 text-xl leading-snug font-medium text-neutral-600">
-                        Consistency across engineering and design leads to better products.
+                        {pillar.description}
                       </p>
                     </motion.div>
                   ))}
                 </div>
               </div>
+            </section> */}
+
+            {/* NEW SLIDE 5: RESOURCES FOR ARTISTS */}
+            <section className="flex h-screen w-screen shrink-0 flex-col items-center justify-center px-12 lg:px-24">
+              <div className="mb-12 flex w-full max-w-6xl items-center gap-4">
+                <h1 className="text-5xl font-black tracking-tighter text-[#E44B2B] uppercase">
+                  More about me
+                </h1>
+                <span className="text-4xl"></span>
+              </div>
+
+              <ResourceAccordion />
             </section>
 
             {/* SECTION 4: HOBBIES & CARD STACK (Side-by-Side) */}
@@ -291,39 +305,15 @@ export default function AboutPage() {
                     When I am not <br /> on my laptop, <br /> I am probably...
                   </motion.h1>
 
-                  <motion.p
-                    initial={{ x: -30, opacity: 0 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="max-w-xl text-2xl leading-relaxed font-medium text-neutral-700"
-                  >
-                    Sketching, cooking up new recipes, or dreaming of adopting more cats!!
-                  </motion.p>
-
-                  <p className="mt-12 text-[10px] font-black tracking-[0.2em] text-neutral-400 uppercase">
-                    Interactive Stack — Swipe cards to explore
-                  </p>
                 </div>
 
                 {/* Right Side: Tilted Card Stack */}
-                <div className="flex flex-1 items-center justify-center">
+                <div className="flex flex-1 items-center justify-center ">
                   <div className="relative">
                     <CardStack />
                   </div>
                 </div>
               </div>
-            </section>
-
-            {/* NEW SLIDE 5: RESOURCES FOR ARTISTS */}
-            <section className="flex h-screen w-screen shrink-0 flex-col items-center justify-center px-12 lg:px-24">
-              <div className="mb-12 flex w-full max-w-6xl items-center gap-4">
-                <h1 className="text-5xl font-black tracking-tighter text-[#E44B2B] uppercase">
-                  Who is
-                </h1>
-                <span className="text-4xl">💡</span>
-              </div>
-
-              <ResourceAccordion />
             </section>
 
             {/* SLIDE 6: FAQ SECTION */}
