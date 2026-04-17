@@ -12,7 +12,7 @@ import {
   type Variants,
 } from 'framer-motion';
 import Header from '@/components/landing/Header'; // Adjust the import path as needed
-import { aboutData } from '../../data/aboutData';
+import {pillars } from '../../data/aboutData';
 import ResourceAccordion from '../../components/about/ResourceAccordion';
 import CardStack from '../../components/about/CardStack';
 import FAQAccordion from '../../components/about/FAQAccordion';
@@ -115,167 +115,43 @@ export default function AboutPage() {
               </div>
             </section>
 
-            {/* --- SECTION 2: BENTO GRID (1:1 MATCH) --- */}
-            <section className="flex h-screen w-screen shrink-0 items-center justify-center px-12 lg:px-20">
-              <div className="flex w-full max-w-[1440px] items-center gap-16">
-                {/* Left Header Column */}
-                <div className="w-[350px] flex-shrink-0">
-                  <div
-                    className={`h-5 w-5 ${aboutData.header.dotColor} mb-8 rounded-full shadow-sm`}
-                  />
-                  <h1 className="text-[85px] leading-[0.8] font-[1000] tracking-tighter whitespace-pre-line uppercase">
-                    {aboutData.header.title}
-                  </h1>
-                </div>
-
-                {/* Right Bento Grid */}
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  className="grid h-[620px] w-full grid-cols-12 items-stretch gap-5"
-                >
-                  {/* Toolkit Box */}
-                  <motion.div
-                    variants={itemVariants}
-                    className="group col-span-4 flex flex-col justify-between overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
-                  >
-                    <div>
-                      <h3 className="mb-2 text-4xl font-[1000] tracking-tighter">
-                        {aboutData.toolkit.title}
-                      </h3>
-                      <p className="mb-6 text-[17px] leading-snug font-bold text-neutral-800">
-                        {aboutData.toolkit.description}
-                      </p>
-                    </div>
-
-                    <div className="-mx-10 flex flex-col gap-4 overflow-hidden">
-                      {aboutData.toolkit.categories.map((category, rowIndex) => (
-                        <div key={category.name} className="relative w-full">
-                          <motion.div
-                            className="flex gap-3 px-10"
-                            animate={{
-                              x: rowIndex % 2 === 0 ? [0, -240] : [-240, 0],
-                            }}
-                            transition={{
-                              duration: 15 + rowIndex * 2,
-                              repeat: Infinity,
-                              ease: 'linear',
-                            }}
-                          >
-                            {/* Duplicate icons to ensure seamless loop for each row */}
-                            {[...category.icons, ...category.icons, ...category.icons].map(
-                              (item, i) => (
-                                <div
-                                  key={i}
-                                  className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl text-xl text-white shadow-sm ${item.color} transition-transform hover:scale-110`}
-                                  title={category.name}
-                                >
-                                  {React.createElement(item.icon)}
-                                </div>
-                              )
-                            )}
-                          </motion.div>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-
-                  {/* Skills Box (Stickers) */}
-                  <motion.div
-                    variants={itemVariants}
-                    className="col-span-4 flex flex-col overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
-                  >
-                    <h3 className="mb-4 text-4xl font-[1000] tracking-tighter">
-                      {aboutData.skills.title}
-                    </h3>
-                    <p className="mb-8 text-[17px] leading-snug font-bold text-neutral-800">
-                      {aboutData.skills.description}
-                    </p>
-
-                    {/* Wrap the stickers in a motion div to trigger the stagger */}
-                    <motion.div
-                      variants={stickerContainer}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      className="flex flex-wrap gap-2"
-                    >
-                      {aboutData.skills.items.map((skill, idx) => (
-                        <motion.span
-                          key={skill}
-                          custom={idx}
-                          variants={stickerFalling}
-                          className="rounded-full border-[1.5px] border-black bg-white px-4 py-1.5 text-[11px] font-[1000] uppercase shadow-[2px_2px_0px_rgba(0,0,0,1)]"
-                        >
-                          {skill}
-                        </motion.span>
-                      ))}
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Map & Portfolio Stack */}
-                  <div className="col-span-4 grid grid-rows-2 gap-5">
-                    {/* Map Box */}
-                    <motion.div
-                      variants={itemVariants}
-                      className="relative overflow-hidden rounded-[3rem] border-[1.5px] border-black"
-                    >
-                      <Image
-                        src={aboutData.location.city} // Dynamically use the city property for the image
-                        alt="Location Map"
-                        layout="fill"
-                        className="object-cover"
-                      />
-                    </motion.div>
-                    {/* Portfolio Box */}
-                    <motion.div
-                      variants={itemVariants}
-                      className="group relative flex flex-col justify-center overflow-hidden rounded-[3rem] border-[1.5px] border-black bg-white p-10"
-                    >
-                      <h3 className="z-10 mb-3 text-4xl leading-none font-[1000] tracking-tighter">
-                        {aboutData.portfolio.title}
-                      </h3>
-                      <p className="z-10 mb-2 text-sm font-bold text-neutral-600">
-                        {aboutData.portfolio.subtitle}
-                      </p>
-                      <a
-                        href={aboutData.portfolio.url}
-                        className="z-10 text-sm font-[1000] break-all underline underline-offset-4"
-                      >
-                        {aboutData.portfolio.displayLink}
-                      </a>
-                      <div
-                        className={`absolute -right-8 -bottom-8 -z-0 h-32 w-32 rounded-full transition-transform duration-700 ease-in-out group-hover:scale-[4]`}
-                      />
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
-            </section>
-            {/* SECTION 3: WHAT DEFINES ME */}
+            {/* SECTION 3: WHAT DEFINES ME
             <section className="flex h-screen w-screen shrink-0 items-center justify-center px-12 lg:px-24">
               <div className="w-full max-w-6xl">
                 <h1 className="mb-20 text-8xl font-[1000] tracking-tighter uppercase">
                   What defines me
                 </h1>
                 <div className="grid grid-cols-2 gap-x-20 gap-y-16">
-                  {[1, 2, 3, 4].map((id) => (
+                  {pillars.map((pillar) => (
                     <motion.div
-                      key={id}
+                      key={pillar.id}
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       className="border-t-[1.5px] border-black pt-8"
                     >
-                      <span className="text-2xl font-[1000] text-neutral-400 italic">0{id}.</span>
-                      <h3 className="mt-2 text-3xl font-[1000] uppercase">Core Pillar</h3>
+                      <span className="text-2xl font-[1000] text-neutral-400 italic">
+                        0{pillar.id}.
+                      </span>
+                      <h3 className="mt-2 text-3xl font-[1000] uppercase">{pillar.title}</h3>
                       <p className="mt-4 text-xl leading-snug font-medium text-neutral-600">
-                        Consistency across engineering and design leads to better products.
+                        {pillar.description}
                       </p>
                     </motion.div>
                   ))}
                 </div>
               </div>
+            </section> */}
+
+            {/* NEW SLIDE 5: RESOURCES FOR ARTISTS */}
+            <section className="flex h-screen w-screen shrink-0 flex-col items-center justify-center px-12 lg:px-24">
+              <div className="mb-12 flex w-full max-w-6xl items-center gap-4">
+                <h1 className="text-5xl font-black tracking-tighter text-[#E44B2B] uppercase">
+                  More about me
+                </h1>
+                <span className="text-4xl"></span>
+              </div>
+
+              <ResourceAccordion />
             </section>
 
             {/* SECTION 4: HOBBIES & CARD STACK (Side-by-Side) */}
@@ -300,18 +176,6 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-            </section>
-
-            {/* NEW SLIDE 5: RESOURCES FOR ARTISTS */}
-            <section className="flex h-screen w-screen shrink-0 flex-col items-center justify-center px-12 lg:px-24">
-              <div className="mb-12 flex w-full max-w-6xl items-center gap-4">
-                <h1 className="text-5xl font-black tracking-tighter text-[#E44B2B] uppercase">
-                  More about me
-                </h1>
-                <span className="text-4xl"></span>
-              </div>
-
-              <ResourceAccordion />
             </section>
 
             {/* SLIDE 6: FAQ SECTION */}

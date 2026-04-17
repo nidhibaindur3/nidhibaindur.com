@@ -38,20 +38,29 @@ export const quickFacts = [
 
 export const pillars = [
   {
-    title: 'Systems thinking',
+    id: 1,
+    title: 'People First, Always',
     description:
-      'I love creating frameworks that make collaboration easier. Design systems, rituals, and documentation keep teams aligned and shipping confidently.',
+      ' I build with people in mind, especially those often left out of the conversation.',
   },
   {
-    title: 'Evidence-led decisions',
+    id: 2,
+    title: 'Throughtful technology',
     description:
-      'Qualitative research, quant insights, and purposeful experiments guide my work—every design choice is rooted in outcomes.',
+      'I do not just build things that work, I think about their impact.',
   },
   {
-    title: 'Inclusive craft',
+    id: 3,
+    title: 'Access Matters',
     description:
-      'Accessibility, localization, and inclusive storytelling are built into my process from day zero, not retrofitted later.',
+      'Where you’re from shouldn’t limit what you can access or build.',
   },
+  {
+    id: 4,
+    title: 'Learning by Doing',
+    description:
+      'I figure things out by building, breaking, and trying again.',
+  }
 ];
 export const toolkitIcons = [
   { id: 1, color: 'bg-[#FFD900]', icon: 'M' },
@@ -163,6 +172,129 @@ export const RESOURCES = [
   },
   
 ];
+
+
+export const COURSEWORK = {
+  cs: [
+    {
+      title: 'Computer Science I - Python',
+      code: 'CSCI 141',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Computer Science II - Java',
+      code: 'CSCI 142',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Intro to Artificial Intelligence',
+      code: 'CSCI 331',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Intro to Computer Science Theory',
+      code: 'CSCI 262',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Machine Learning',
+      code: 'CSCI 335',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Mechanics of Programming - C',
+      code: 'CSCI 243',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Principles of Data Management',
+      code: 'CSCI 320',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+  ],
+  math: [
+    {
+      title: 'Abstract Algebra',
+      code: 'MATH 441',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Calculus I & II',
+      code: 'MATH 181A and 182B',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Codes and Ciphers (Honors Option)',
+      code: 'MATH 367H',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Complex Networks',
+      code: 'MATH 709',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Differential Equations',
+      code: 'MATH 231',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Discrete Mathematics and Introduction to Proofs',
+      code: 'MATH 200',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Graph Theory',
+      code: 'MATH 351',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Intro to Time Series',
+      code: 'STAT 335',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Linear Algebra',
+      code: 'MATH 241',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Mathematical Modeling',
+      code: 'MATH 421',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Multivariable and Vector Calculus',
+      code: 'MATH 231',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Numerical Analysis',
+      code: 'MATH 411',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Probability and Statistics I',
+      code: 'MATH 251',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Real Variables I',
+      code: 'MATH 431',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'The Entrepreneurial Scientist',
+      code: 'ITDS 389',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+    {
+      title: 'Undergraduate Research In Mathematical Sciences',
+      code: 'MATH 495 (6 credits)',
+      associatedWith: 'Rochester Institute of Technology',
+    },
+  ],
+};
 
 export const Work_Experience = [
     {

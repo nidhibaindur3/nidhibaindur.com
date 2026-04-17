@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { RESOURCES, awards, Work_Experience } from '../../data/aboutData';
+import { RESOURCES, awards, Work_Experience, COURSEWORK } from '../../data/aboutData';
 
 export default function ResourceAccordion() {
   const [activeTab, setActiveTab] = useState('01');
@@ -83,14 +83,37 @@ export default function ResourceAccordion() {
                   )}
 
                   {res.id === '04' && (
-                    <div className="flex-1 text-left overflow-y-scroll max-h-[400px]">
-                      <h2 className="mb-6 font-serif text-5xl font-medium">Hobbies</h2>
-                      <p className="text-lg leading-relaxed text-neutral-600">
-                        {/* Add hobbies content here */}
-                        I enjoy painting, hiking, and playing the piano during my free time.
-                      </p>
-                    </div>
-                  )}
+                    <div className="flex h-full w-full flex-col gap-12 px-16">
+                      <h2 className="mb-6 font-serif text-5xl font-medium">Coursework</h2>
+
+                      {/* Computer Science Section */}
+                      <div>
+                        <h3 className="mb-4 text-3xl font-bold">Computer Science</h3>
+                        <ul className="mb-8 max-w-2xl text-lg leading-relaxed text-neutral-600">
+                          {COURSEWORK.cs.map((course, index) => (
+                            <li key={index} className="mb-4">
+                              <div className="font-bold">{course.title}</div>
+                              <div className="text-sm text-neutral-500">{course.code}</div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+    {/* Mathematics Section */}
+    <div>
+      <h3 className="mb-4 text-3xl font-bold">Mathematics</h3>
+      <ul className="mb-8 max-w-2xl text-lg leading-relaxed text-neutral-600">
+        {COURSEWORK.math.map((course, index) => (
+          <li key={index} className="mb-4">
+            <div className="font-bold">{course.title}</div>
+            <div className="text-sm text-neutral-500">{course.code}</div>
+            <div className="text-sm text-neutral-400">{course.associatedWith}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
                 </motion.div>
               )}
             </AnimatePresence>
