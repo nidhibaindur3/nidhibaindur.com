@@ -36,11 +36,11 @@ const tools = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative overflow-hidden bg-neutral-50 py-24">
+    <section id="skills" className="relative overflow-hidden bg-main-theme py-24">
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white via-transparent to-transparent" />
       <div className="section-container relative z-10 max-w-6xl space-y-14">
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
-          <span className="rounded-full border border-neutral-200 bg-white px-4 py-1 text-sm font-medium text-neutral-600">
+          <span className="rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600">
             Skills &amp; toolkit
           </span>
           <h2 className="text-3xl font-semibold tracking-tight text-balance text-neutral-900 sm:text-4xl">
@@ -56,11 +56,11 @@ export default function Skills() {
             {capabilities.map((capability) => (
               <div
                 key={capability.title}
-                className="rounded-3xl border border-neutral-200 bg-white/80 p-8 shadow-[0_16px_60px_-45px_rgba(15,23,42,0.5)] backdrop-blur"
+                className="rounded-3xl border border-neutral-200 bg-main-theme/80 p-8 shadow-[0_16px_60px_-45px_rgba(15,23,42,0.5)] backdrop-blur"
               >
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-lg font-semibold text-neutral-900">{capability.title}</h3>
-                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[var(--color-main-theme)]" />
+                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-main-theme" />
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-600">
                   {capability.description}
@@ -69,7 +69,7 @@ export default function Skills() {
                   {capability.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1"
+                      className="rounded-full border border-neutral-200 bg-main-theme px-3 py-1"
                     >
                       {item}
                     </span>
@@ -78,7 +78,7 @@ export default function Skills() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-6 rounded-3xl border border-neutral-200 bg-white/80 p-8 shadow-[0_16px_60px_-45px_rgba(15,23,42,0.5)] backdrop-blur">
+          <div className="flex flex-col gap-6 rounded-3xl border border-neutral-200 bg-main-theme/80 p-8 shadow-[0_16px_60px_-45px_rgba(15,23,42,0.5)] backdrop-blur">
             <div className="space-y-2">
               <h3 className="text-lg font-semibold text-neutral-900">Tools I rely on</h3>
               <p className="text-sm text-neutral-600">
@@ -89,7 +89,7 @@ export default function Skills() {
               {tools.map((tool) => (
                 <div
                   key={tool}
-                  className="flex items-center justify-center rounded-2xl border border-neutral-100 bg-neutral-50 px-4 py-3 text-sm font-medium text-neutral-700 shadow-sm"
+                  className="flex items-center justify-center rounded-2xl border border-neutral-100 bg-main-theme px-4 py-3 text-sm font-medium text-neutral-700 shadow-sm"
                 >
                   {tool}
                 </div>

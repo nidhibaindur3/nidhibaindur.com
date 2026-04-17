@@ -42,7 +42,7 @@ export default function StickyCards() {
     <section
       ref={sectionRef}
       style={{ height: `${CARDS.length * 90}vh` }}
-      className="relative bg-neutral-50 dark:bg-neutral-950"
+      className="relative bg-main-theme dark:bg-neutral-950"
     >
       {/* Background */}
       <div className="fixed inset-0 -z-10 bg-[url('/your-bg.jpg')] bg-cover bg-center" />
@@ -105,7 +105,7 @@ function AnimatedCard({
       style={{ y, opacity, scale, visibility, zIndex: total - index }}
       className="absolute inset-x-0 top-0 will-change-transform"
     >
-      <Card className="overflow-hidden border border-white/30 bg-white/75 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/70">
+      <Card className="overflow-hidden border border-white/30 bg-main-theme/75 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/70">
         {/* Image at top */}
         <div className="relative h-56 w-full">
           <Image

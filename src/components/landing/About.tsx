@@ -8,7 +8,7 @@ export default function About() {
           {/* LEFT */}
           <div className="space-y-6">
             {/* Badge + Headline */}
-            <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-1 text-sm font-medium text-neutral-600">
+            <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600">
               <span className="inline-block h-2 w-2 rounded-full bg-main-theme" />
               {aboutContent.badge}
             </span>
@@ -29,7 +29,7 @@ export default function About() {
               {quickFacts.map((fact) => (
                 <div
                   key={fact.label}
-                  className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-5 text-sm"
+                  className="rounded-2xl border border-neutral-200 bg-main-theme px-4 py-5 text-sm"
                 >
                   <p className="text-neutral-500">{fact.label}</p>
                   <p className="mt-1 font-medium text-neutral-800">{fact.value}</p>
@@ -39,11 +39,11 @@ export default function About() {
           </div>
 
           {/* RIGHT */}
-          <div className="grid gap-5 rounded-3xl border border-neutral-200 bg-neutral-50/80 p-8 shadow-[0_16px_60px_-45px_rgba(15,23,42,0.5)] backdrop-blur">
+          <div className="grid gap-5 rounded-3xl border border-neutral-200 bg-main-theme/80 p-8 shadow-[0_16px_60px_-45px_rgba(15,23,42,0.5)] backdrop-blur">
             {pillars.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-neutral-100 bg-white/80 p-6 shadow-sm"
+                className="rounded-2xl border border-neutral-100 bg-main-theme/80 p-6 shadow-sm"
               >
                 <h3 className="text-lg font-semibold text-neutral-900">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-600">{item.description}</p>

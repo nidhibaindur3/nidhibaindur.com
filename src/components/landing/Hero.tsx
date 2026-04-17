@@ -17,7 +17,7 @@ export default function Hero() {
   const typingFinished = typedName === nameText;
 
   return (
-    <section id="home" className="relative isolate overflow-hidden bg-white pt-32 pb-24">
+    <section id="home" className="relative isolate overflow-hidden bg-main-theme pt-32 pb-24">
       {/* Background Glow */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -101,7 +101,7 @@ export default function Hero() {
             <motion.div
               whileHover={{ scale: 1.03 }}
               transition={{ type: 'spring', stiffness: 120 }}
-              className="relative w-full overflow-hidden rounded-[2.75rem] border border-neutral-100 bg-white shadow-[0_25px_80px_-40px_rgba(15,23,42,0.4)]"
+              className="relative w-full overflow-hidden rounded-[2.75rem] border border-neutral-100 bg-main-theme shadow-[0_25px_80px_-40px_rgba(15,23,42,0.4)]"
             >
               <Image
                 src="/images/hero.jpeg"

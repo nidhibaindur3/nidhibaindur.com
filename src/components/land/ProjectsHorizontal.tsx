@@ -82,7 +82,7 @@ export default function HorizontalProjects({ projecting }: Props) {
   }, [projecting.length]);
 
   return (
-    <div className="bg-white">
+    <div className="bg-main-theme">
       <div ref={containerRef} className="flex flex-col md:h-screen md:flex-row md:overflow-hidden">
         {projecting.map((project) => (
           <section

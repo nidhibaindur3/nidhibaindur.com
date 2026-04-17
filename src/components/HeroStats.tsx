@@ -10,7 +10,7 @@ export function HeroStats({ stats }: { stats: Stat[] }) {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="grid gap-6 rounded-3xl border border-neutral-200/70 bg-white/70 p-6 shadow-sm backdrop-blur-md sm:grid-cols-3"
+      className="grid gap-6 rounded-3xl border border-neutral-200/70 bg-main-theme/70 p-6 shadow-sm backdrop-blur-md sm:grid-cols-3"
     >
       {stats.map((stat) => (
         <motion.div

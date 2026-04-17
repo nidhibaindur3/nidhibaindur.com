@@ -62,19 +62,10 @@ export default function CardStack() {
                 }}
                 className={`absolute inset-0 h-full w-full rounded-[2.5rem] border-[1.5px] border-black bg-white flex flex-col items-center justify-center shadow-2xl`}
               >
-                {/* Add the image for the card */}
-                <div className="relative h-[500px] w-full overflow-hidden rounded-t-[2.5rem]">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    layout="fill"
-                    objectFit="cover" // Ensures the image fits and crops if necessary
-                  />
-                </div>
-                {/* Card title */}
-                <div className="p-4 bg-white text-center opacity-100">
-                  <h2 className="text-lg font-bold">{card.title}</h2>
-                </div>
+                <div className="mb-4 h-16 w-16 rounded-full bg-main-theme/20" />
+                <span className="px-6 text-center text-lg font-[1000] tracking-tighter text-white uppercase">
+                  {card.title}
+                </span>
               </motion.li>
             );
           })}

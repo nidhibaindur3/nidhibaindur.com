@@ -15,7 +15,7 @@ export default function AnimatedText({ text }: { text: string }) {
   if (!path) return null;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-white">
+    <div className="flex min-h-screen items-center justify-center bg-main-theme">
       <svg className="w-[90%] max-w-5xl" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet">
         {/* Animate stroke drawing */}
         <motion.path

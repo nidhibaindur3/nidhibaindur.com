@@ -8,7 +8,7 @@ export default function ResourceAccordion() {
   const [activeTab, setActiveTab] = useState('01');
 
   return (
-    <div className="flex h-[500px] w-full max-w-6xl overflow-hidden border-[1.5px] border-black bg-white">
+    <div className="flex h-[500px] w-full max-w-6xl overflow-hidden border-[1.5px] border-black bg-main-theme">
       {RESOURCES.map((res) => {
         const isActive = activeTab === res.id;
 
