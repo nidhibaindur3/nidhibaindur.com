@@ -12,7 +12,7 @@ import {
   type Variants,
 } from 'framer-motion';
 import Header from '@/components/landing/Header'; // Adjust the import path as needed
-import {pillars } from '../../data/aboutData';
+import {pillars, aboutData } from '../../data/aboutData';
 import ResourceAccordion from '../../components/about/ResourceAccordion';
 import CardStack from '../../components/about/CardStack';
 import FAQAccordion from '../../components/about/FAQAccordion';
@@ -278,7 +278,7 @@ export default function AboutPage() {
                   ))}
                 </div>
               </div>
-            </section> */}
+            </section> 
 
             {/* NEW SLIDE 5: RESOURCES FOR ARTISTS */}
             <section className="flex h-screen w-screen shrink-0 flex-col items-center justify-center px-12 lg:px-24">
