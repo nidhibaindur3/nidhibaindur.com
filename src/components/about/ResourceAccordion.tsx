@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RESOURCES, awards, Work_Experience, COURSEWORK } from '../../data/aboutData';
+import { Award } from 'lucide-react';
 
 export default function ResourceAccordion() {
   const [activeTab, setActiveTab] = useState('01');
@@ -26,7 +27,7 @@ export default function ResourceAccordion() {
               onClick={() => setActiveTab(res.id)}
               className={`absolute top-0 bottom-0 left-0 flex w-[60px] items-center justify-center border-r-[1.5px] border-black ${res.tabColor} z-20`}
             >
-              <span className="rotate-[-90deg] text-xs font-black tracking-widest whitespace-nowrap uppercase">
+              <span className="-rotate-90 text-xs font-black tracking-widest whitespace-nowrap uppercase">
                 {res.label}
               </span>
             </button>
@@ -40,23 +41,10 @@ export default function ResourceAccordion() {
                   className="ml-[60px] flex h-full w-full flex-row items-center justify-center gap-12 px-16"
                 >
                   {/* Render content based on the active tab */}
+
+                  
+
                   {res.id === '01' && (
-
-                    <><div className="flex h-90 w-60 items-center justify-center rounded-2xl border border-black/5 bg-neutral-100 shadow-inner">
-                      <img src="/images/About/awards/nidhi_grad.jpeg" alt="Awards" className="h-full w-full object-cover rounded-2xl" />
-                    </div><div className="flex-1 text-left overflow-y-scroll max-h-[400px]">
-                        <h2 className="mb-6 font-serif text-5xl font-medium">Awards</h2>
-                        <ul className="mb-8 max-w-md text-lg leading-relaxed text-neutral-600">
-                          {awards.map((award, index) => (
-                            <li key={index} className="mb-2">
-                              <span className="font-bold">{award.year}:</span> {award.title}
-                            </li>
-                          ))}
-                        </ul>
-                      </div></>
-                  )}
-
-                  {res.id === '02' && (
                     <div className="flex-1 text-left overflow-y-scroll max-h-[400px]">
                       <h2 className="mb-6 font-serif text-5xl font-medium">Work Experience</h2>
                       <ul className="mb-8 max-w-md text-lg leading-relaxed text-neutral-600">
@@ -72,7 +60,38 @@ export default function ResourceAccordion() {
                     </div>
                   )}
 
+                  {res.id === '02' && (
+                    <><div className="flex h-90 w-60 items-center justify-center rounded-2xl border border-black/5 bg-neutral-100 shadow-inner">
+                    <img src="/images/About/awards/nidhi_grad.jpeg" alt="Awards" className="h-full w-full object-cover rounded-2xl" />
+                  </div><div className="flex-1 text-left overflow-y-scroll max-h-[400px]">
+                      <h2 className="mb-6 font-serif text-5xl font-medium">Awards</h2>
+                      <ul className="mb-8 max-w-md text-lg leading-relaxed text-neutral-600">
+                        {awards.map((award, index) => (
+                          <li key={index} className="mb-2">
+                            <span className="font-bold">{award.year}:</span> {award.title}
+                          </li>
+                        ))}
+                      </ul>
+                    </div></>
+                  )}
+
                   {res.id === '03' && (
+
+                  <><div className="flex h-90 w-60 items-center justify-center rounded-2xl border border-black/5 bg-neutral-100 shadow-inner">
+                    <img src="/images/About/awards/nidhi_grad.jpeg" alt="Awards" className="h-full w-full object-cover rounded-2xl" />
+                  </div><div className="flex-1 text-left overflow-y-scroll max-h-[400px]">
+                      <h2 className="mb-6 font-serif text-5xl font-medium">Awards</h2>
+                      <ul className="mb-8 max-w-md text-lg leading-relaxed text-neutral-600">
+                        {awards.map((award, index) => (
+                          <li key={index} className="mb-2">
+                            <span className="font-bold">{award.year}:</span> {award.title}
+                          </li>
+                        ))}
+                      </ul>
+                    </div></>
+                  )}
+
+                  {res.id === '04' && (
                     <div className="flex-1 text-left overflow-y-scroll max-h-[400px]">
                       <h2 className="mb-6 font-serif text-5xl font-medium">Hobbies</h2>
                       <p className="text-lg leading-relaxed text-neutral-600">
@@ -82,7 +101,7 @@ export default function ResourceAccordion() {
                     </div>
                   )}
 
-                  {res.id === '04' && (
+                  {res.id === '05' && (
                     <div className="flex h-full w-full flex-col gap-12 px-16">
                       <h2 className="mb-6 font-serif text-5xl font-medium">Coursework</h2>
 

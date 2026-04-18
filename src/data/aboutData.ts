@@ -134,17 +134,9 @@ export const awards = [
 ];
 
 export const RESOURCES = [
+
   {
     id: '01',
-    title: 'AWARDS',
-    label: 'AWARDS',
-    color: 'bg-[#F9F6EE]', // Cream background
-    tabColor: 'bg-main-theme',
-    description: 'To add.',
-    linkText: 'WATCH NOW',
-  },
-  {
-    id: '02',
     title: 'WORK EXPERIENCE',
     label: 'WORK EXPERIENCE',
     color: 'bg-white',
@@ -152,6 +144,17 @@ export const RESOURCES = [
     description: 'One-on-one sessions.',
     linkText: 'BOOK SESSION',
   },
+
+  {
+    id: '02',
+    title: 'AWARDS',
+    label: 'AWARDS',
+    color: 'bg-[#F9F6EE]', // Cream background
+    tabColor: 'bg-main-theme',
+    description: 'To add.',
+    linkText: 'WATCH NOW',
+  },
+  
   {
     id: '03',
     title: 'INVOLVEMENT',
@@ -162,7 +165,7 @@ export const RESOURCES = [
     linkText: 'READ MORE',
   },
   {
-    id: '03',
+    id: '04',
     title: 'HOBBIES',
     label: 'HOBBIES',
     color: 'bg-main-theme',

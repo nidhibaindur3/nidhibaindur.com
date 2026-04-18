@@ -2,26 +2,20 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
 import { cards as initialCards } from '../../data/aboutData';
 
 export default function CardStack() {
   const [cards, setCards] = useState(initialCards);
 
-  const moveToEnd = (from: number) => {
-    const newCards = [...cards];
-    const item = newCards.splice(from, 1)[0];
-    newCards.push(item);
-    setCards(newCards);
-  };
-
-  // Auto-animate cards every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      moveToEnd(0); 
+      setCards((prevCards) => {
+        const [first, ...rest] = prevCards;
+        return [...rest, first];
+      });
     }, 3000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [cards]);
 
   return (
@@ -48,24 +42,21 @@ export default function CardStack() {
                   x: 0,
                 }}
                 transition={{
-                  type: 'spring',
-                  stiffness: 260,
-                  damping: 25,
+                  duration: 0.5,
+                  ease: 'easeInOut',
                 }}
-                whileTap={isTop ? { scale: 1.05 } : {}}
-                drag={isTop ? 'x' : false}
-                dragConstraints={{ left: 0, right: 0 }}
-                onDragEnd={(_, info) => {
-                  if (Math.abs(info.offset.x) > 60) {
-                    moveToEnd(index);
-                  }
-                }}
-                className={`absolute inset-0 h-full w-full rounded-[2.5rem] border-[1.5px] border-black bg-white flex flex-col items-center justify-center shadow-2xl`}
+                className={`absolute h-[500px] w-[300px] rounded-xl border ${card.color} bg-white shadow-lg`}
               >
-                <div className="mb-4 h-16 w-16 rounded-full bg-main-theme/20" />
-                <span className="px-6 text-center text-lg font-[1000] tracking-tighter text-white uppercase">
-                  {card.title}
-                </span>
+                <div className="relative h-full w-full overflow-hidden rounded-xl">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full bg-linear-to-t from-black/80 to-transparent p-4 text-white">
+                    <h3 className="text-lg font-bold">{card.title}</h3>
+                  </div>
+                </div>
               </motion.li>
             );
           })}
