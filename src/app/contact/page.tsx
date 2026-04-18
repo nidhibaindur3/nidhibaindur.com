@@ -47,11 +47,11 @@ export default function ContactPage() {
                 className="flex flex-col font-serif leading-[0.85] tracking-[-0.05em]"
                 style={{ fontSize: 'clamp(3.5rem, 10vw, 11rem)' }}
               >
-                <span className="block whitespace-nowrap">Want to start</span>
-                <span className="block italic">a new project?</span>
+                <span className="block whitespace-nowrap  text-[#342620]">Want to start</span>
+                <span className="block italic  text-[#342620]">a new project?</span>
               </h1>
 
-              <div className="mt-12 flex flex-wrap items-center gap-x-3 gap-y-1 font-serif text-[clamp(1.5rem,3vw,2.5rem)] leading-tight italic opacity-80">
+              <div className="mt-12 flex flex-wrap items-center gap-x-3 gap-y-1 font-serif text-[clamp(1.5rem,3vw,2.5rem)]  text-[#342620]leading-tight italic opacity-80">
                 <span>Or just say</span>
                 <div className="relative inline-flex min-w-[4ch]">
                   <AnimatePresence mode="wait">
@@ -61,7 +61,7 @@ export default function ContactPage() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -15 }}
                       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                      className="inline-block whitespace-nowrap"
+                      className="inline-block whitespace-nowrap  text-[#342620]"
                     >
                       {GREETINGS[index]}
                     </motion.span>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               {/* Email / Click to Copy */}
               <div className="group relative">
                 <div className="mb-6 flex items-end justify-between">
-                  <p className="font-sans text-[10px] font-bold tracking-[0.4em] uppercase opacity-40">
+                  <p className="font-sans text-[10px] font-bold tracking-[0.4em] uppercase opacity-40 ">
                     Inquiries — Click to copy
                   </p>
                   <AnimatePresence>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   }}
                 >
                   {/* Word-break ensures the long email wraps beautifully on mobile and small laptops */}
-                  <span className="relative z-10 block break-words transition-opacity duration-300 group-hover:opacity-40">
+                  <span className="relative z-10 block break-words transition-opacity duration-300 group-hover:opacity-40 ">
                     {CONTACT_DATA.email}
                   </span>
 
@@ -118,7 +118,7 @@ export default function ContactPage() {
 
               {/* Socials: Larger, clearer spacing */}
               <div className="border-t border-black/10 pt-10">
-                <p className="mb-10 font-sans text-[10px] font-bold tracking-[0.4em] uppercase opacity-40">
+                <p className="mb-10 font-sans text-[10px] font-bold tracking-[0.4em] uppercase opacity-40 ">
                   Follow
                 </p>
                 <div className="grid grid-cols-2 gap-x-8 gap-y-12">

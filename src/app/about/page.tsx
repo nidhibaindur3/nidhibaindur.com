@@ -91,12 +91,12 @@ export default function AboutPage() {
             <section className="flex h-screen w-screen shrink-0 items-center justify-center px-12 lg:px-24">
               <div className="flex w-full max-w-7xl items-center gap-20">
                 <div className="flex-1">
-                  <h1 className="text-[clamp(4rem,9vw,9rem)] leading-[0.75] font-[1000] tracking-tighter text-neutral-900 uppercase">
-                    HI! IM
+                  <h1 className="text-[clamp(4rem,9vw,9rem)] font-serif leading-[0.75] font-[1000] tracking-tighter text-[#342620] uppercase">
+                    HI, IM
                     <br />
                     NIDHI
                   </h1>
-                  <p className="mt-10 max-w-md text-xl leading-relaxed font-medium text-neutral-800">
+                  <p className="mt-10 max-w-md text-xl font-serif leading-relaxed font-medium text-neutral-800">
                     Software engineer who likes calm UI, sharp execution, and building things that
                     feel intentional.
                   </p>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             {/* NEW SLIDE 5: RESOURCES FOR ARTISTS */}
             <section className="flex h-screen w-screen shrink-0 flex-col items-center justify-center px-12 lg:px-24">
               <div className="mb-12 flex w-full max-w-6xl items-center gap-4">
-                <h1 className="text-5xl font-black tracking-tighter text-[#E44B2B] uppercase">
+                <h1 className="text-5xl font-serif font-black tracking-tighter text-[#342620]  uppercase">
                   More about me
                 </h1>
                 <span className="text-4xl"></span>
@@ -135,7 +135,7 @@ export default function AboutPage() {
                   <motion.h1
                     initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    className="mb-8 text-[clamp(3rem,5vw,5.5rem)] leading-[0.9] font-[1000] tracking-tighter uppercase"
+                    className="mb-8 font-serif text-[clamp(3rem,5vw,5.5rem)] leading-[0.9] font-[1000]  text-[#342620] tracking-tighter uppercase"
                   >
                     When I am not <br /> on my laptop, <br /> I am probably...
                   </motion.h1>
@@ -175,7 +175,7 @@ export default function AboutPage() {
                   <motion.h1
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    className="mb-12 text-6xl font-[1000] tracking-tighter text-[#4B6B3F] uppercase"
+                    className="mb-12 text-6xl font-serif font-[1000] tracking-tighter text-[#342620] uppercase"
                   >
                     Frequently Asked Questions
                   </motion.h1>

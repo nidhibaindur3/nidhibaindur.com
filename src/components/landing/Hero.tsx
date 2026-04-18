@@ -39,7 +39,7 @@ export default function Hero() {
             viewport={{ once: true }}
             className="space-y-5"
           >
-            <h1 className="relative inline-flex items-baseline pt-1 text-4xl leading-[1.15] font-semibold tracking-tight text-neutral-900 sm:text-5xl lg:text-[3.35rem]">
+            <h1 className="relative font-serif inline-flex items-baseline pt-1 text-4xl leading-[1.15] font-semibold tracking-tight text-neutral-900 sm:text-5xl lg:text-[3.35rem]">
               <span>{typedName}</span>
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
@@ -48,7 +48,7 @@ export default function Hero() {
               />
             </h1>
 
-            <p className="text-lg text-neutral-600 lg:text-xl">
+            <p className="text-lg font-serif  text-neutral-600 lg:text-xl">
               A Software Engineer based in Dallas 101
             </p>
           </motion.div>
@@ -61,13 +61,13 @@ export default function Hero() {
             viewport={{ once: true }}
             className="flex flex-wrap items-center gap-2 text-sm text-neutral-500"
           >
-            <span className="font-medium text-neutral-700">Currently exploring</span>
+            <span className="font-serif font-medium text-neutral-700">Currently exploring</span>
 
             {focusAreas.map((item) => (
               <motion.span
                 key={item}
                 whileHover={{ y: -2, backgroundColor: '#f5f5f5' }}
-                className="rounded-full border border-neutral-200 px-3 py-1 transition"
+                className="rounded-full border border-neutral-200 px-3 py-1 transition font-serif "
               >
                 {item}
               </motion.span>

@@ -8,18 +8,18 @@ export default function About() {
           {/* LEFT */}
           <div className="space-y-6">
             {/* Badge + Headline */}
-            <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600">
+            <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-main-theme px-4 py-1 text-sm font-medium text-neutral-600 font-serif ">
               <span className="inline-block h-2 w-2 rounded-full bg-main-theme" />
               {aboutContent.badge}
             </span>
 
-            <h2 className="text-3xl font-semibold tracking-tight text-pretty text-neutral-900 sm:text-4xl">
+            <h2 className="text-3xl font-serif font-semibold tracking-tight text-pretty text-neutral-900 sm:text-4xl">
               {aboutContent.headline}
             </h2>
 
             {/* Paragraphs */}
             {aboutContent.paragraphs.map((text) => (
-              <p key={text} className="text-base leading-relaxed text-neutral-600 sm:text-lg">
+              <p key={text} className="text-base font-serif  leading-relaxed text-neutral-600 sm:text-lg">
                 {text}
               </p>
             ))}
@@ -31,8 +31,8 @@ export default function About() {
                   key={fact.label}
                   className="rounded-2xl border border-neutral-200 bg-main-theme px-4 py-5 text-sm"
                 >
-                  <p className="text-neutral-500">{fact.label}</p>
-                  <p className="mt-1 font-medium text-neutral-800">{fact.value}</p>
+                  <p className="text-neutral-500 font-serif ">{fact.label}</p>
+                  <p className="mt-1 font-medium text-neutral-800 font-serif ">{fact.value}</p>
                 </div>
               ))}
             </div>
@@ -43,10 +43,10 @@ export default function About() {
             {pillars.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-neutral-100 bg-main-theme/80 p-6 shadow-sm"
+                className="rounded-2xl border font-serif  border-neutral-100 bg-main-theme/80 p-6 shadow-sm"
               >
-                <h3 className="text-lg font-semibold text-neutral-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-neutral-600">{item.description}</p>
+                <h3 className="text-lg font-semibold text-neutral-900 font-serif ">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-600 font-serif ">{item.description}</p>
               </div>
             ))}
           </div>

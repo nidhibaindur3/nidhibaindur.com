@@ -47,13 +47,13 @@ export default function CardStack() {
                 }}
                 className={`absolute h-[500px] w-[300px] rounded-xl border ${card.color} bg-white shadow-lg`}
               >
-                <div className="relative h-full w-full overflow-hidden rounded-xl">
+                <div className="relative font-serif h-full w-full overflow-hidden rounded-xl">
                   <img
                     src={card.image}
                     alt={card.title}
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 w-full bg-linear-to-t from-black/80 to-transparent p-4 text-white">
+                  <div className="absolute font-serif bottom-0 left-0 w-full bg-linear-to-t from-black/80 to-transparent p-4 text-white">
                     <h3 className="text-lg font-bold">{card.title}</h3>
                   </div>
                 </div>
