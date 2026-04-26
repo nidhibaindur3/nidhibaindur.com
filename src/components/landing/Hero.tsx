@@ -12,7 +12,7 @@ import { stats, focusAreas } from '@/data/hero';
 import { HeroStats } from '../HeroStats';
 
 export default function Hero() {
-  const nameText = "Hello! I'm Nidhi Baindur";
+  const nameText = "Hi! I'm Nidhi Baindur";
   const typedName = useTypingEffect(nameText, 65);
   const typingFinished = typedName === nameText;
 
@@ -49,7 +49,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg font-serif  text-neutral-600 lg:text-xl">
-              A Software Engineer based in Dallas 101
+              A Software Engineer based in Dallas, TX
             </p>
           </motion.div>
 

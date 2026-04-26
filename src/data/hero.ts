@@ -4,4 +4,4 @@ export const stats = [
   { label: 'Teams partnered', value: '18' },
 ];
 
-export const focusAreas = ['Design systems', 'Product vision', 'Human-centered research'];
+export const focusAreas = ['Systems Design', 'Cloud Engineering', 'Human-centered research'];
