@@ -21,18 +21,20 @@ import { TbMathFunction, TbVariable } from 'react-icons/tb';
 export const aboutContent = {
   badge: 'About',
 
-  headline: 'Designer, facilitator, and systems nerd focused on creating calm, resilient products.',
+  headline: 'I build software that\'s grounded in people, not just systems',
 
   paragraphs: [
-    'I partner closely with product and engineering leads to turn ambiguous ideas into aligned roadmaps. My work blends research, strategy, and meticulous craft so we can deliver experiences that feel effortless and inclusive.',
+    'A lot of what I work on doesn\’t start fully formed. It\’s usually a bit unclear at first - an idea, a gap, something that doesn\’t quite work yet. I like sitting with that, figuring it out slowly, and turning it into something that feels simple on the other side.',
 
-    "Outside of the design desk you'll find me mentoring early career designers, illustrating wild interface concepts, and writing about building mindful digital experiences.",
+    "I think often about who technology is really for. Growing up in Mauritius, access wasn’t a given, and things didn’t always work the way they were supposed to. It made me more aware of what gets assumed, and who gets left out of those assumptions.",
+
+    "So I try to build with that in mind. Not perfectly, but with intention."
   ],
 };
 
 export const quickFacts = [
   { label: 'Based in', value: 'DFW' },
-  { label: 'Working style', value: 'Remote-first, async-friendly' },
+  { label: 'Working style', value: 'Flexible - I adapt' },
   { label: 'Collaborations', value: 'Fintech, Health, SaaS' },
 ];
 

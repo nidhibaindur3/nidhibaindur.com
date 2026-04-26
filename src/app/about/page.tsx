@@ -91,14 +91,13 @@ export default function AboutPage() {
             <section className="flex h-screen w-screen shrink-0 items-center justify-center px-12 lg:px-24">
               <div className="flex w-full max-w-7xl items-center gap-20">
                 <div className="flex-1">
-                  <h1 className="text-[clamp(4rem,9vw,9rem)] font-serif leading-[0.75] font-[1000] tracking-tighter text-[#342620] uppercase">
-                    HI, IM
+                  <h1 className="text-[clamp(4rem,9vw,9rem)] font-serif leading-[0.75] font-[500] tracking-tighter text-[#342620]">
+                    Hi, i'm 
                     <br />
-                    NIDHI
+                    Nidhi
                   </h1>
                   <p className="mt-10 max-w-md text-xl font-serif leading-relaxed font-medium text-neutral-800">
-                    Software engineer who likes calm UI, sharp execution, and building things that
-                    feel intentional.
+                  I’m a software engineer, figuring things out and building them as I go.
                   </p>
                 </div>
                 <div className="relative h-[70vh] flex-1">
